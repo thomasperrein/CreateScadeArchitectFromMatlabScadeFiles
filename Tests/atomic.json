@@ -1,0 +1,10 @@
+{
+    "bloc1":{
+        "inputs":["Elec"],
+        "outputs":["Phy"]
+    },
+    "bloc2":{
+        "inputs":["Phy"],
+        "outputs":["Com"]
+    }
+}
