@@ -1,0 +1,8 @@
+blockdiag {
+    // Définition des deux blocs
+    block1 [label = "1\n(sortie)"];
+    block2 [label = "2\n(input)"];
+    
+    // Définition de la flèche reliant les deux blocs
+    block1 -> block2;
+}
