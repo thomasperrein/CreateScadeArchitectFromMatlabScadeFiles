@@ -5,10 +5,11 @@ from abc import ABC
 
 class Block:
     """ Block """
-    def __init__(self, name='None', color='white'):
+    def __init__(self, name='None', color='white', label='None'):
         """ Initialise les attributs d'instance """
         self.name = name
         self.color = color
+        self.label = label
         self.ports: List(Port) = []
     
     def set_name(self, name):
@@ -52,6 +53,33 @@ class Block:
     def get_all_ports(self) -> list:
         """ Retourne la liste de tous les ports associés au block """
         return self.ports
+
+
+    def write_label(self):
+        """ retourne le label du block sous forme de string lisible par block diag """
+        return f'label = "{self.label}";\n'
+
+
+    def write_color(self):
+        """ retourne le label du block sous forme de string lisible par block diag """
+        return f'color = "{self.color}";\n'
+
+
+    def write_block_w_port(self,level_of_indentation='\t'):
+        """ return the syntax to write block into the diagram """
+        level_of_indentation_bis = level_of_indentation+level_of_indentation
+        str_to_return = level_of_indentation + 'group ' + self.name + '_group' + ' {\n'
+        str_to_return += level_of_indentation_bis + self.write_label()
+        str_to_return += level_of_indentation_bis + self.write_color()
+        for port in self.get_all_ports():
+            str_to_return += level_of_indentation_bis + port.write_port()
+        str_to_return += level_of_indentation_bis + self.name + ';\n'
+        for port in self.get_input_ports():
+            str_to_return += level_of_indentation_bis + f'{port.name} -> {self.name} [dir = none, style = dashed];\n'
+        for port in self.get_output_ports():
+            str_to_return += level_of_indentation_bis + f'{self.name} -> {port.name} [dir = none, style = dashed];\n'
+        str_to_return += level_of_indentation + '}\n'
+        return str_to_return
     
 """ Déclaration de la classe Port et de ses méthodes """
 
@@ -87,7 +115,7 @@ class Port(ABC):
     
     def write_port(self):
         """ methode pour implementer dans blockdiag le port """
-        return f'{self.name} [shape = circle]'
+        return f'{self.name} [shape = circle];\n'
 
 
 

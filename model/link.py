@@ -21,4 +21,4 @@ class Link:
 
     
     def write_link(self) -> str:
-        return f'{self.output_port.get_block().name} -> {self.input_port.get_block().name} [dir = forward]'
+        return f'\t{self.output_port.name} -> {self.input_port.name} [dir = forward];\n'

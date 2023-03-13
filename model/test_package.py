@@ -6,9 +6,10 @@ import model.block_port as block_port
 import model.link as link
  
 def test_unit_block():
-    block_test = block_port.Block('block1','white')
+    block_test = block_port.Block('block1','white','label')
     assert block_test.name == 'block1'
     assert block_test.color == 'white'
+    assert block_test.label == 'label'
     assert block_test.get_name() == 'block1'
 
     block_test.change_color('red')
@@ -86,6 +87,6 @@ def test_global():
 
     link1 = link.Link(output_port_block1_2,input_port_block2)
 
-    assert link1.write_link() == "block1 -> aaaa [dir = forward]"
+    assert link1.write_link() == "\tElec -> Phy [dir = forward];\n"
     assert block1.write_block() == '[label = "block1"]'
     assert block2.write_block() == '[label = "aaaa"]'
