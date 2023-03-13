@@ -80,10 +80,14 @@ class Port(ABC):
         return self.block
 
     
-    def __del__(self):
-        print(f"object {self.name} deleted")
-        print([port.name for port in self.block.ports])
+    def delete(self):
         self.block.ports.remove(self)
+        del self
+
+    
+    def write_port(self):
+        """ methode pour implementer dans blockdiag le port """
+        return f'{self.name} [shape = circle]'
 
 
 

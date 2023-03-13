@@ -75,7 +75,7 @@ def test_global():
     assert output_port_block1.block == block1
     assert block1.ports == [output_port_block1]
 
-    output_port_block1.__del__()
+    output_port_block1.delete()
     assert block1.ports == []
     assert not(output_port_block1 in locals() or output_port_block1 in globals())
 
