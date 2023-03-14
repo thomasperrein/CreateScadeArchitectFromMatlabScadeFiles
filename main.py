@@ -3,19 +3,20 @@
 Main programm to test firstly
 """
 from model.block_port import Block
-from model.block_port import InputPort, OutputPort
-from model.link import Link
+from model.block_port import InputPort, OutputPort, Link
+
 
 def main():
     """ main programm """
-    block = Block('MyName','white','Mylabel')
+    block = Block(name='MyName',color='white')
     input_port_1 = InputPort(block,'Input1')
     input_port_2 = InputPort(block,'Input2')
+    input_port_5 = InputPort(block, 'newinput')
     output_port_1 = OutputPort(block,'Output1')
     output_port_2 = OutputPort(block,'Output2')
     to_file = block.write_block_w_port()
 
-    block2 = Block('Myname2','orange','Label2')
+    block2 = Block(name='Myname2',color='orange')
     input_port_3 = InputPort(block2,'Input3')
     input_port_4 = InputPort(block2,'Input4')
     output_port_3 = OutputPort(block2,'Output3')
