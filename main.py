@@ -9,16 +9,16 @@ from model.link import Link
 def main():
     """ main programm """
     block = Block('MyName','white','Mylabel')
-    input_port_1 = InputPort(block,'Input1','red')
-    input_port_2 = InputPort(block,'Input2','red')
-    output_port_1 = OutputPort(block,'Output1','blue')
-    output_port_2 = OutputPort(block,'Output2','blue')
+    input_port_1 = InputPort(block,'Input1')
+    input_port_2 = InputPort(block,'Input2')
+    output_port_1 = OutputPort(block,'Output1')
+    output_port_2 = OutputPort(block,'Output2')
     to_file = block.write_block_w_port()
 
     block2 = Block('Myname2','orange','Label2')
-    input_port_3 = InputPort(block2,'Input3','red')
-    input_port_4 = InputPort(block2,'Input4','red')
-    output_port_3 = OutputPort(block2,'Output3','blue')
+    input_port_3 = InputPort(block2,'Input3')
+    input_port_4 = InputPort(block2,'Input4')
+    output_port_3 = OutputPort(block2,'Output3')
     to_file2 = block2.write_block_w_port()
 
     link1 = Link(output_port_1,input_port_3)

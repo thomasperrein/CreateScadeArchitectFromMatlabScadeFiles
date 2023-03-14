@@ -3,14 +3,33 @@
 from typing import List
 from abc import ABC
 
-class Block:
+PARAMETERS = ['name', 'color', 'label', 'textcolor',\
+                'style','width','height', 'icon',\
+                'background', 'shape']
+
+class CSS(ABC):
+    """ Classe CSS pour les cosmétiques des blocks """
+    def __init__(self, name:str ='None', color:str ='white', label:str = None, textcolor:str = 'black', \
+        style: str = 'dotted', width: int = 100, height: int = 50, icon = None, background = None, \
+        shape:str = 'rectangle') -> None:
+        """ Initialise une instance commune au port et au block pour toutes les cosmétiques """
+        for param_name in PARAMETERS:
+            param_value = locals()[param_name]
+            setattr(self, param_name, param_value)
+    
+    def write(self):
+        """ methode pour implementer dans blockdiag le port """
+        str_to_write = ''
+        for param in PARAMETERS[1:]:
+            str_to_write += f' {param} = {getattr(self,param)},'
+        return f'{self.name} [' + str_to_write[1:-1] + '];\n'
+        
+class Block(CSS):
     """ Block """
-    def __init__(self, name='None', color='white', label='None'):
-        """ Initialise les attributs d'instance """
-        self.name = name
-        self.color = color
-        self.label = label
+    def __init__(self, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = 'black', style: str = 'dotted', width: int = 100, height: int = 50, icon="'static/vide.png'", background="'static/logo.png'", numbered: int = None, shape: str = 'rectangle') -> None:
+        super().__init__(name, color, label, textcolor, style, 100, 50, icon, background, 'box')
         self.ports: List(Port) = []
+        
     
     def set_name(self, name):
         """ methode pour set le nom du block """
@@ -26,11 +45,6 @@ class Block:
         """ méthode pour changer la couleur d'affichage du block """
         self.color = color
     
-
-    def write_block(self) -> str:
-        """ Ecriture du bloc dans block diagram """
-        return f'[label = "{self.name}"]'
-
 
     def get_input_ports(self) -> list:
         """ Recupère la liste des ports de type input associés au block """
@@ -72,29 +86,27 @@ class Block:
         str_to_return += level_of_indentation_bis + self.write_label()
         str_to_return += level_of_indentation_bis + self.write_color()
         for port in self.get_all_ports():
-            str_to_return += level_of_indentation_bis + port.write_port()
+            str_to_return += level_of_indentation_bis + port.write()
         str_to_return += level_of_indentation_bis + self.name + ';\n'
         for port in self.get_input_ports():
-            str_to_return += level_of_indentation_bis + f'{port.name} -> {self.name} [dir = none, style = dashed];\n'
+            str_to_return += level_of_indentation_bis + f'{port.name} -> {self.name} [style = none];\n'
         for port in self.get_output_ports():
-            str_to_return += level_of_indentation_bis + f'{self.name} -> {port.name} [dir = none, style = dashed];\n'
+            str_to_return += level_of_indentation_bis + f'{self.name} -> {port.name} [style = none];\n'
         str_to_return += level_of_indentation + '}\n'
         return str_to_return
     
 """ Déclaration de la classe Port et de ses méthodes """
 
-class Port(ABC):
+class Port(CSS,ABC):
     """ Classe abstraite pour désigner un port """
-    def __init__(self, block: Block, name='None', color='color') -> None:
-        """ Initialise la classe Port et ses attributs """
-        self.name = name
-        self.color = color
+    def __init__(self, block: Block, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = 'black', style: str = 'dotted', width: int = 100, height: int = 50, icon="'static/vide.png'", background="'static/input_output.png'", numbered: int = None, shape: str = 'rectangle') -> None:
+        super().__init__(name, color, label, textcolor, style, 25, 25, icon, background, shape='circle')
         self.block = block
         block.ports.append(self)
 
 
     def get_name(self):
-        """ méthoe pour récuperer le nom du Port """
+        """ méthode pour récuperer le nom du Port """
         return self.name
 
     
@@ -112,11 +124,6 @@ class Port(ABC):
         self.block.ports.remove(self)
         del self
 
-    
-    def write_port(self):
-        """ methode pour implementer dans blockdiag le port """
-        return f'{self.name} [shape = circle];\n'
-
 
 
 class InputPort(Port):
@@ -124,16 +131,17 @@ class InputPort(Port):
 
     port_type = 'input'
 
-    def __init__(self, block: Block, name='None', color='color') -> None:
-        super().__init__(block, name, color)
+    def __init__(self, block: Block, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = 'black', style: str = 'dotted', width: int = 25, height: int = 25, icon="'static/vide.png'", background="'static/input_output.png'", shape: str = 'rectangle') -> None:
+        super().__init__(block, name, color, label, textcolor, style, width, height, icon, background, shape)
 
 
 class OutputPort(Port):
     """ Classe spécifique d'output hérité de Port """
+
     port_type = 'output'
 
-    def __init__(self, block: Block, name='None', color='color') -> None:
-        super().__init__(block, name, color)
+    def __init__(self, block: Block, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = 'black', style: str = 'dotted', width: int = 25, height: int = 25, icon="'static/vide.png'", background="'static/input_output.png'", shape: str = 'rectangle') -> None:
+        super().__init__(block, name, color, label, textcolor, style, width, height, icon, background, shape)
 
 
 class InputOutputPort(InputPort, OutputPort):

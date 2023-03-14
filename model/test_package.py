@@ -35,7 +35,7 @@ def test_unit_port():
     
     port_test_2 = block_port.OutputPort(block_port_test, name='port2')
     assert port_test_2.name == 'port2'
-    assert port_test_2.color == 'color'
+    assert port_test_2.color == 'white'
 
     assert port_test_2.port_type == 'output'
 
@@ -87,6 +87,6 @@ def test_global():
 
     link1 = link.Link(output_port_block1_2,input_port_block2)
 
-    assert link1.write_link() == "\tElec -> Phy [dir = forward];\n"
+    assert link1.write_link() == "\tElec -> Phy [dir = forward, label = None, style = None];\n"
     assert block1.write_block() == '[label = "block1"]'
     assert block2.write_block() == '[label = "aaaa"]'
