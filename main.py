@@ -2,8 +2,8 @@
 """
 Main programm to test firstly
 """
-from model.block_port import Block
-from model.block_port import InputPort, OutputPort, Link
+from model.block_port_link import Block
+from model.block_port_link import InputPort, OutputPort, Link
 
 
 def main():
