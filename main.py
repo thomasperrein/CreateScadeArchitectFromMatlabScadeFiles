@@ -2,35 +2,37 @@
 """
 Main programm to test firstly
 """
-from model.block_port_link import Block
-from model.block_port_link import InputPort, OutputPort, Link
+import api_scade.scade_suite_file as sc
+from model.block_port_link import Block, InputPort, OutputPort, Link
 
+PATH = r"C:\TRAVAIL\BCM_WIP\CLEAN_VERSION\F46_LGS_SW_WL\10_BCM_SW\BCM_CSCIs\01_COM\BCM_COM\BCM_COM_Design\02-SCADE_Models\BCM_COM_PROC_P5\BCM_COM_PROC_P5.etp"
 
 def main():
     """ main programm """
-    block = Block(name='MyName',color='white')
-    input_port_1 = InputPort(block,'Input1')
-    input_port_2 = InputPort(block,'Input2')
-    input_port_5 = InputPort(block, 'newinput')
-    output_port_1 = OutputPort(block,'Output1')
-    output_port_2 = OutputPort(block,'Output2')
-    to_file = block.write_block_w_port()
+    scade_object = sc.ScadeFileSuite(PATH)
+    data = scade_object.data_of_interest()
 
-    block2 = Block(name='Myname2',color='orange')
-    input_port_3 = InputPort(block2,'Input3')
-    input_port_4 = InputPort(block2,'Input4')
-    output_port_3 = OutputPort(block2,'Output3')
-    to_file2 = block2.write_block_w_port()
+    list_of_to_file = []
+    list_of_inputs = []
+    list_of_outputs = []
+    list_of_block = []
 
-    link1 = Link(output_port_1,input_port_3)
-    link2 = Link(output_port_2,input_port_4)
+    for i in data:
+        for j in data[i]:
+            b = Block(j + '_' + i,"blue")
+            for input in data[i][j]['inputs']:
+                v = InputPort(b,input.name + '_' + j[:4])
+                list_of_inputs.append(v)
+            for output in data[i][j]['outputs']:
+                vv = OutputPort(b,output.name + '_' + j[:4])
+                list_of_outputs.append(vv)
+            list_of_to_file.append(b.write_block_w_port())
+            list_of_block.append(b)
 
     f = open('my_file.diag','w')
     f.write('blockdiag admin {\n')
-    f.write(to_file)
-    f.write(to_file2)
-    f.write(link1.write_link())
-    f.write(link2.write_link())
+    for to_file in list_of_to_file:
+        f.write(to_file)
     f.write('}\n')
 
 if __name__ == "__main__":
