@@ -40,8 +40,8 @@ class ScadeFileSuite(ScadeFile):
             for operator in model_temp.get_operators():
                 out[model_temp.get_name_of_operator(operator)] = {}
                 for diagram in model_temp.get_diagrams_from_operator(operator):
-                    output_list = re.findall(r'V\w*\s*=', diagram.to_string())
-                    input_list = re.findall(r'=\s*V\w*', diagram.to_string())
+                    output_list = re.findall(r'\bV\w*\s*=', diagram.to_string())
+                    input_list = re.findall(r'=\s*\bV\w*', diagram.to_string())
                     # Supprimer le signe égal et les espaces en trop
                     output_list = [s.strip(' =') for s in output_list]
                     input_list = [s.strip('= ') for s in input_list]

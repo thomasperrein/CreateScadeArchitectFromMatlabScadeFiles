@@ -12,9 +12,9 @@ import re
 PATH_2_5 = r"C:\TRAVAIL\BCM_WIP\CLEAN_VERSION\F46_LGS_SW_WL\10_BCM_SW\BCM_CSCIs\01_COM\BCM_COM\BCM_COM_Design\02-SCADE_Models\BCM_COM_PROC_P2_5\BCM_COM_PROC_P2_5.etp"
 PATH_5 =  r"C:\TRAVAIL\BCM_WIP\CLEAN_VERSION\F46_LGS_SW_WL\10_BCM_SW\BCM_CSCIs\01_COM\BCM_COM\BCM_COM_Design\02-SCADE_Models\BCM_COM_PROC_P5\BCM_COM_PROC_P5.etp"
 PATH_20 = r"C:\TRAVAIL\BCM_WIP\CLEAN_VERSION\F46_LGS_SW_WL\10_BCM_SW\BCM_CSCIs\01_COM\BCM_COM\BCM_COM_Design\02-SCADE_Models\BCM_COM_PROC_P20\BCM_COM_PROC_P20.etp"
-COLOR = ["blue","red","orange"]
+COLOR = ["blue","red","orange","green"]
 
-PATH_SESSION = r"C:\TRAVAIL\BCM_WIP\V1\F46_LGS_SW_WL\10_BCM_SW\BCM_CSCIs\01_COM\BCM_COM\BCM_COM_Design\02-SCADE_Models\MASTER\MASTER.etp"
+PATH_SESSION = r"C:\TRAVAIL\BCM_WIP\V1\F46_LGS_SW_WL\10_BCM_SW\BCM_CSCIs\MASTER\MASTER.etp"
 
 
 def main():
@@ -46,23 +46,23 @@ def main():
     links = {}
     i = 0
     for b in list_of_block:
-        ports_b = [re.sub(r'^d\d+', "", port.name) for port in b.get_input_ports()]
+        ports_b = [re.sub(r'd\d+$', "", port.name) for port in b.get_input_ports()]
         for bb in list_of_block:
             if b != bb:
-                ports_bb = [re.sub(r'^d\d+', "", port.name) for port in bb.get_output_ports()]
+                ports_bb = [re.sub(r'd\d+$', "", port.name) for port in bb.get_output_ports()]
                 set_common = set(ports_b) & set(ports_bb)
                 for e in set_common:
                     i += 1
-                    links[f'link{i}']={'input': locals()[e + re.findall(r'^d\d+',b.name)[0]],'output': locals()[e + re.findall(r'^d\d+',bb.name)[0]]}
+                    links[f'link{i}']={'input': e + re.findall(r'^d\d+',b.name)[0],'output': e + re.findall(r'^d\d+',bb.name)[0]}
 
                 
-
+    fake_block = Block('a name')
     f = open('my_file.diag','w')
     f.write('blockdiag admin {\n')
     for to_file in list_of_to_file:
         f.write(to_file)
     for link in links:
-        f.write(Link(links[link]['output'],links[link]['input'],link).write_link())
+        f.write(Link(OutputPort(fake_block,links[link]['output']),InputPort(fake_block,links[link]['input']),link).write_link() + ';\n')
     f.write('}\n')
 
 if __name__ == "__main__":
