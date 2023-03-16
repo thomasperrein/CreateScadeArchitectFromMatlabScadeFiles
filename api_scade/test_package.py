@@ -19,14 +19,12 @@ def main(path):
 
 def test():
     scade_env.load_project(PATH_SESSION)
-    a = scade.model.suite.get_roots()
-    b=a[0].unload()
-    c=a[0].load2(PATH_2_5)
-    a[0].unload()
-    d=a[0].load2(PATH_5)
-    carre = 0
+    a = scade.model.suite.get_roots()[0]
+    scade_object = ScadeFileSuite(a)
+    data = scade_object.data_of_interest(3)
+    return data
 
 if __name__=="__main__":
-    test()
-    
+    data = test()
+    print(data)
 
