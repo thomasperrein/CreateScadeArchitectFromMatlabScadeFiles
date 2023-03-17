@@ -42,9 +42,10 @@ class CSS(ABC):
 
 class Block(CSS):
     """ Block """
-    def __init__(self, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon=None, background=None, shape: str = None) -> None:
-        super().__init__(name, color, label, textcolor, style, width, height, icon, background, 'box')
+    def __init__(self, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon=None, background=None, shape: str = None, usage:int = 0) -> None:
+        super().__init__(name, color, label, textcolor, style, width, height, icon, background, 'square')
         self.ports: List(Port) = []
+        self.usage = usage
         
     
     def set_name(self, name):
@@ -109,12 +110,18 @@ class Block(CSS):
         str_to_return += level_of_indentation + '}\n'
         return str_to_return
     
+
+    def add_usage(self):
+        """ Add 1 to usage to know if the block is used or not """
+        self.usage += 1 
+
+    
 """ Déclaration de la classe Port et de ses méthodes """
 
 class Port(CSS,ABC):
     """ Classe abstraite pour désigner un port """
-    def __init__(self, block: Block, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon=None, background="'static/input_output.png'", numbered: int = None, shape: str = 'rectangle') -> None:
-        super().__init__(name, color, label, textcolor, style, width, height, icon, background, shape='circle')
+    def __init__(self, block: Block, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon="'static/input_output.png'", background=None, numbered: int = None, shape: str = 'box') -> None:
+        super().__init__(name, color, label, textcolor, style, width, height, icon, background, shape='box')
         self.block = block
         block.ports.append(self)
 
@@ -145,8 +152,8 @@ class InputPort(Port):
 
     port_type = 'input'
 
-    def __init__(self, block: Block, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon=None, background="'static/input_output.png'", shape: str = 'circle') -> None:
-        super().__init__(block, name, color, label, textcolor, style, width, height, icon, background, shape)
+    def __init__(self, block: Block, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon="'static/input_output.png'", background=None, numbered: int = None, shape: str = 'box') -> None:
+        super().__init__(block, name, color, label, textcolor, style, width, height, icon, background, numbered, shape)
 
 
 class OutputPort(Port):
@@ -154,8 +161,8 @@ class OutputPort(Port):
 
     port_type = 'output'
 
-    def __init__(self, block: Block, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon=None, background="'static/input_output.png'", shape: str = 'circle') -> None:
-        super().__init__(block, name, color, label, textcolor, style, width, height, icon, background, shape)
+    def __init__(self, block: Block, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon="'static/input_output.png'", background=None, numbered: int = None, shape: str = 'box') -> None:
+        super().__init__(block, name, color, label, textcolor, style, width, height, icon, background, numbered, shape)
 
 
 class InputOutputPort(InputPort, OutputPort):

@@ -21,10 +21,11 @@ def test():
     scade_env.load_project(PATH_SESSION)
     a = scade.model.suite.get_roots()[0]
     scade_object = ScadeFileSuite(a)
-    data = scade_object.data_of_interest(3)
-    return data
+    data = scade_object.data_of_diagram(3)
+    data2 = scade_object.data_of_nodes()
+    return data,data2
 
 if __name__=="__main__":
-    data = test()
-    print(data)
+    data,data2 = test()
+    print(data,data2)
 
