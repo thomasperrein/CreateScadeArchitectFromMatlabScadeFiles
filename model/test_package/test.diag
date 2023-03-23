@@ -1,0 +1,29 @@
+blockdiag admin {
+	group MyName_group {
+		color = "white";
+		shape = "square";
+		Input1 [color = "white", icon = 'static/input_output.png', shape = "box"];
+		Input2 [color = "white", icon = 'static/input_output.png', shape = "box"];
+		newinput [color = "white", icon = 'static/input_output.png', shape = "box"];
+		Output1 [color = "white", icon = 'static/input_output.png', shape = "box"];
+		Output2 [color = "white", icon = 'static/input_output.png', shape = "box"];
+		MyName;
+		Input1 -> MyName [style = "none"];
+		Input2 -> MyName [style = "none"];
+		newinput -> MyName [style = "none"];
+		MyName -> Output1 [style = "none"];
+		MyName -> Output2 [style = "none"];
+	}
+	group Myname2_group {
+		color = "orange";
+		Input3 [color = "white", icon = 'static/input_output.png', shape = "box"];
+		Input4 [color = "white", icon = 'static/input_output.png', shape = "box"];
+		Output3 [color = "white", icon = 'static/input_output.png', shape = "box"];
+		Myname2;
+		Input3 -> Myname2 [style = "none"];
+		Input4 -> Myname2 [style = "none"];
+		Myname2 -> Output3 [style = "none"];
+	}
+	Output1 -> Input3 [color = "black", dir = "forward"];
+	Output2 -> Input4 [color = "black", dir = "forward"];
+}

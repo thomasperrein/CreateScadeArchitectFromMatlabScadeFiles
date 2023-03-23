@@ -16,6 +16,18 @@ PATH_SESSION = r"C:\TRAVAIL\BCM_WIP\V1\F46_LGS_SW_WL\10_BCM_SW\BCM_CSCIs\01_COM\
 
 def main():
     """ main programm """
+    styleCSS_block = {
+        'shape' : 'box'
+    }
+    styleCSS_port = {
+        'color' : 'white',
+        'icon' : "'static/input_output.png'",
+        'shape' : 'box'
+    }
+    styleCSS_link = {
+        'color' : 'black',
+        'dir' : 'forward'
+    }
     list_of_to_file = []
     list_of_inputs = []
     list_of_outputs = []
@@ -40,12 +52,12 @@ def main():
     #         list_of_block.append(b)
 
     for i,color in zip(data,COLOR):
-        b = Block(i,color)
+        b = Block(i,color,**styleCSS_block)
         for input in data[i]['inputs']:
-            v = InputPort(b,input + re.findall(r'_P\d+',i)[0])
+            v = InputPort(b,input + re.findall(r'_P\d+',i)[0],**styleCSS_port)
             list_of_inputs.append(v)
         for output in data[i]['outputs']:
-            vv = OutputPort(b,output + re.findall(r'_P\d+',i)[0])
+            vv = OutputPort(b,output + re.findall(r'_P\d+',i)[0],**styleCSS_port)
             list_of_outputs.append(vv)
         list_of_to_file.append(b.write_block_w_port())
         list_of_block.append(b)
@@ -82,7 +94,7 @@ def main():
     for to_file in list_of_to_file:
         f.write(to_file)
     for link in links:
-        f.write(Link(OutputPort(fake_block,links[link]['output']),InputPort(fake_block,links[link]['input']),link).write_link() + ';\n')
+        f.write(Link(OutputPort(fake_block,links[link]['output']),InputPort(fake_block,links[link]['input']),link,**styleCSS_link).write_link() + ';\n')
     f.write('}\n')
 
 if __name__ == "__main__":

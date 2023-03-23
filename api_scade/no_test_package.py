@@ -1,6 +1,9 @@
 """ Script de test du package """
+import sys
 
-from scade_suite_file import *
+sys.path.insert(0, r'..\FindLinkBetweenNodesScade')
+
+from api_scade.scade_suite_file import *
 import scade_env
 import scade.model.suite, scade.model.project
 

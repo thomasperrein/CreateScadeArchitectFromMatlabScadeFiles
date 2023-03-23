@@ -1,0 +1,18 @@
+<archi>
+	<block name = "mes couilles" label = "a label" shape = "box">
+		<input name = "input1" label = "A label 2"/>
+		<output name = "output1" icon = "'static/input_output.png'"/>
+	</block>
+	<block name = "2" shape = "box">
+		<input name = "input2" color = "red"/>
+		<output name = "output2" shape = "box"/>
+	</block>
+	<link name = "no name" color = "black" dir = "forward">
+		<input name = "input2"/>
+		<output name = "output1"/>
+	</link>
+	<link name = "no name 2" color = "black" dir = "backward">
+		<input name = "input1"/>
+		<output name = "output2"/>
+	</link>
+</archi>

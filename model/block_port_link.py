@@ -9,7 +9,7 @@ PARAMETERS = ['name', 'color', 'label', 'textcolor',\
 
 class CSS(ABC):
     """ Classe CSS pour les cosmétiques des blocks """
-    def __init__(self, name:str ='None', color:str ='white', label:str = None, textcolor:str = None, \
+    def __init__(self, name:str ='None', color:str =None, label:str = None, textcolor:str = None, \
         style: str = None, width: int = None, height: int = None, icon = None, background = None, \
         shape:str = None) -> None:
         """ Initialise une instance commune au port et au block pour toutes les cosmétiques """
@@ -18,32 +18,45 @@ class CSS(ABC):
             setattr(self, param_name, param_value)
 
     
-    def write_parameter(self, param:str):
+    def write_parameter(self, param:str, InARCHIFile= False):
         """ retourne le paramètre du block sous forme de string lisible par block diag """
-        if getattr(self,param) == None:
-            return ""
-        else:
-            if type(getattr(self,param)) == int or param == 'icon' or param == 'background':
-                return f'{param} = {getattr(self,param)}'
+        if InARCHIFile:
+            if getattr(self,param) == None:
+                return ""
             else:
                 return f'{param} = "{getattr(self,param)}"'
+        else:
+            if getattr(self,param) == None:
+                return ""
+            else:
+                if type(getattr(self,param)) == int or param == 'icon' or param == 'background':
+                    return f'{param} = {getattr(self,param)}'
+                else:
+                    return f'{param} = "{getattr(self,param)}"'
 
 
-    def write_attributes(self):
+    def write_attributes(self, InARCHIFile = False):
         """ methode pour implementer dans blockdiag le block avec attributs avec  """
         str_to_write = ''
-        for param in PARAMETERS[1:]:
-            if self.write_parameter(param) == "":
-                continue
-            str_to_write += ' ' + self.write_parameter(param) + ','
-        return f'[' + str_to_write[1:-1] + ']' #1:-1 to remove space blank and coma at the end
+        if InARCHIFile:
+            for param in PARAMETERS[:]:
+                if self.write_parameter(param, InARCHIFile) == "":
+                    continue
+                str_to_write += ' ' + self.write_parameter(param, InARCHIFile) 
+            return str_to_write[1:]
+        else:
+            for param in PARAMETERS[1:]:
+                if self.write_parameter(param, InARCHIFile) == "":
+                    continue
+                str_to_write += ' ' + self.write_parameter(param, InARCHIFile) + ','
+            return f'[' + str_to_write[1:-1] + ']' #1:-1 to remove space blank and coma at the end
         
 
 
 class Block(CSS):
     """ Block """
-    def __init__(self, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon=None, background=None, shape: str = None, usage:int = 0) -> None:
-        super().__init__(name, color, label, textcolor, style, width, height, icon, background, 'square')
+    def __init__(self, name: str = 'None', color: str = None, label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon=None, background=None, shape: str = None, usage:int = 0) -> None:
+        super().__init__(name, color, label, textcolor, style, width, height, icon, background, shape)
         self.ports: List(Port) = []
         self.usage = usage
         
@@ -120,8 +133,8 @@ class Block(CSS):
 
 class Port(CSS,ABC):
     """ Classe abstraite pour désigner un port """
-    def __init__(self, block: Block, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon="'static/input_output.png'", background=None, numbered: int = None, shape: str = 'box') -> None:
-        super().__init__(name, color, label, textcolor, style, width, height, icon, background, shape='box')
+    def __init__(self, block: Block, name: str = None, color: str = None, label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon = None, background=None, numbered: int = None, shape: str = None) -> None:
+        super().__init__(name, color, label, textcolor, style, width, height, icon, background, shape)
         self.block = block
         block.ports.append(self)
 
@@ -152,7 +165,7 @@ class InputPort(Port):
 
     port_type = 'input'
 
-    def __init__(self, block: Block, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon="'static/input_output.png'", background=None, numbered: int = None, shape: str = 'box') -> None:
+    def __init__(self, block: Block, name: str = 'None', color: str = None, label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon=None, background=None, numbered: int = None, shape: str = None) -> None:
         super().__init__(block, name, color, label, textcolor, style, width, height, icon, background, numbered, shape)
 
 
@@ -161,7 +174,7 @@ class OutputPort(Port):
 
     port_type = 'output'
 
-    def __init__(self, block: Block, name: str = 'None', color: str = 'white', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon="'static/input_output.png'", background=None, numbered: int = None, shape: str = 'box') -> None:
+    def __init__(self, block: Block, name: str = 'None', color: str = None, label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon=None , background=None, numbered: int = None, shape: str = None) -> None:
         super().__init__(block, name, color, label, textcolor, style, width, height, icon, background, numbered, shape)
 
 
@@ -174,7 +187,7 @@ class InputOutputPort(InputPort, OutputPort):
 
 class Link(CSS):
     """ Lien """
-    def __init__(self, output_port: OutputPort, input_port: InputPort, name: str = 'None', color: str = 'black', label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon=None, background=None, shape: str = None, dir='forward') -> None:
+    def __init__(self, output_port: OutputPort, input_port: InputPort, name: str = 'None', color: str = None, label: str = None, textcolor: str = None, style: str = None, width: int = None, height: int = None, icon=None, background=None, shape: str = None, dir=None) -> None:
         super().__init__(name, color, label, textcolor, style, width, height, icon, background, shape)
         self.input_port = input_port
         self.output_port = output_port
@@ -193,4 +206,7 @@ class Link(CSS):
     
     def write_link(self, level_of_indentation = '\t') -> str:
         """ retourne une chaine de caractère appropriée pour afficher le lien sous block diag"""
-        return f'{level_of_indentation}{self.output_port.name} -> {self.input_port.name} ' + self.write_attributes()
+        if self.dir == None:
+            return f'{level_of_indentation}{self.output_port.name} -> {self.input_port.name} ' + self.write_attributes()
+        else:
+            return f'{level_of_indentation}{self.output_port.name} -> {self.input_port.name} ' + self.write_attributes()[:-1] + ', ' + self.write_parameter('dir') + ']'

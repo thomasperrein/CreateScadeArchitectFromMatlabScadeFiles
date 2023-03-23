@@ -1,8 +1,16 @@
 """
 Programme pour tester les fonctionnalités du Programme
 """
+import sys
+import filecmp
+import os
+
+sys.path.insert(0, r'..\FindLinkBetweenNodesScade')
 
 import model.block_port_link as block_port_link
+
+PATH = "model/test_package/test.diag"
+PATH_TEST = "model/test_package/test_test.diag"
  
 def test_unit_block():
     block_test = block_port_link.Block('block1','white','label')
@@ -34,7 +42,7 @@ def test_unit_port():
     
     port_test_2 = block_port_link.OutputPort(block_port_test, name='port2')
     assert port_test_2.name == 'port2'
-    assert port_test_2.color == 'white'
+    assert port_test_2.color == None
 
     assert port_test_2.port_type == 'output'
 
@@ -86,4 +94,51 @@ def test_global():
 
     link1 = block_port_link.Link(output_port_block1_2,input_port_block2)
 
-    assert link1.write_link() == "\tElec -> Phy [dir = forward, label = None, style = None];\n"
+    assert link1.write_link() == "\tElec -> Phy []"
+
+def test_global_2():
+    """ test global """
+    styleCSS_block = {
+        'color' : 'white',
+        'shape' : 'square'
+    }
+    styleCSS_port = {
+        'color' : 'white',
+        'icon' : "'static/input_output.png'",
+        'shape' : 'box'
+    }
+    styleCSS_link = {
+        'color' : 'black',
+        'dir' : 'forward'
+    }
+    
+    block = block_port_link.Block(name='MyName',**styleCSS_block)
+    input_port_1 = block_port_link.InputPort(block,'Input1', **styleCSS_port)
+    input_port_2 = block_port_link.InputPort(block,'Input2', **styleCSS_port)
+    input_port_5 = block_port_link.InputPort(block, 'newinput', **styleCSS_port)
+    output_port_1 = block_port_link.OutputPort(block,'Output1', **styleCSS_port)
+    output_port_2 = block_port_link.OutputPort(block,'Output2', **styleCSS_port)
+    to_file = block.write_block_w_port()
+
+    block2 = block_port_link.Block(name='Myname2',color='orange')
+    input_port_3 = block_port_link.InputPort(block2,'Input3', **styleCSS_port)
+    input_port_4 = block_port_link.InputPort(block2,'Input4', **styleCSS_port)
+    output_port_3 = block_port_link.OutputPort(block2,'Output3', **styleCSS_port)
+    to_file2 = block2.write_block_w_port()
+
+    link1 = block_port_link.Link(output_port_1,input_port_3,**styleCSS_link)
+    link2 = block_port_link.Link(output_port_2,input_port_4,**styleCSS_link)
+
+    f = open(PATH_TEST,'w')
+    f.write('blockdiag admin {\n')
+    f.write(to_file)
+    f.write(to_file2)
+    f.write(link1.write_link() + ';\n')
+    f.write(link2.write_link() + ';\n')
+    f.write('}\n')
+    f.close()
+
+    assert filecmp.cmp(PATH_TEST,PATH)
+
+    os.remove(PATH_TEST)
+
