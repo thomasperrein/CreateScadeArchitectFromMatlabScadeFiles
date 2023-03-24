@@ -17,6 +17,14 @@ function output = get_list_of_block_connected(filepath,subsystem)
             temp2 = get_param(getfullname(structure{1,1}.DstBlock),'Portconnectivity');
             new_name = getfullname(temp2(2).DstBlock);
             output.go = cat(2,output.go,new_name);
+        elseif strcmp(get_param(getfullname(structure{1,1}.DstBlock),'BlockType'),'Demux')
+            temp2 = get_param(getfullname(structure{1,1}.DstBlock),'Portconnectivity');
+            new_name = getfullname(temp2(2).DstBlock);
+            output.go = cat(2,output.go,new_name);
+        elseif strcmp(get_param(getfullname(structure{1,1}.DstBlock),'BlockType'),'DataTypeConversion')
+            temp2 = get_param(getfullname(structure{1,1}.DstBlock),'Portconnectivity');
+            new_name = getfullname(temp2(2).DstBlock);
+            output.go = cat(2,output.go,new_name);
         else
             output.go = cat(2,output.go,getfullname(structure{1,1}.DstBlock));
         end
