@@ -9,14 +9,19 @@ function output = get_list_of_block_connected_with_port_associated(filepath,subs
         data_base_inport(get_param(input_port{k,1},'Port')) = get_param(input_port{k,1},'PortName'); % to identify a port object with his name 
     end
     
-    from_list = list_of_from(get_param(strcat(filepath,subsystem),'PortConnectivity'), data_base_inport);
+    from_list = list_of_from(get_param(strcat(filepath,subsystem),'PortConnectivity'), data_base_inport, '');
     for k=1:length(from_list)
         new_struct = {};
-        temp = get_param(from_list{1,k}.name_of_block,'GotoTag');
-        name = find_system(filepath,'GotoTag',temp,'BlockType','Goto');
-        structure = get_param(name,'PortConnectivity');
-        new_struct.name = getfullname(structure{1,1}.SrcBlock);
-        new_struct.port_associated = from_list{1,k}.name_of_port_associated;
+        if strcmp(get_param(from_list{1,k}.name_of_block,'BlockType'),'From')
+            temp = get_param(from_list{1,k}.name_of_block,'GotoTag');
+            name = find_system(filepath,'GotoTag',temp,'BlockType','Goto');
+            structure = get_param(name,'PortConnectivity');
+            new_struct.name = getfullname(structure{1,1}.SrcBlock);
+            new_struct.port_associated = from_list{1,k}.name_of_port_associated;
+        else
+            new_struct.name = from_list{1,k}.name_of_block;
+            new_struct.port_associated = from_list{1,k}.name_of_port_associated;
+        end
         output.from = cat(2,output.from,new_struct);
     end
     
