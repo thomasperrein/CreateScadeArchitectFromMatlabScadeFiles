@@ -29,27 +29,36 @@ function output = get_list_of_block_connected_with_port_associated(filepath,subs
     data_base_outport = containers.Map;
 
     for k=1:numel(output_port)
-        data_base_outport(get_param(output_port{k,1},'Port')) = output_port{k,1};
+        data_base_outport(get_param(output_port{k,1},'Port')) = get_param(output_port{k,1},'PortName');
     end
     go_list = list_of_go(get_param(strcat(filepath,subsystem),'PortConnectivity'),data_base_outport);
     for k=1:length(go_list)
+        new_struct = {};
         temp = get_param(go_list{1,k}.name_of_block,'GotoTag');
         name = find_system(filepath,'GotoTag',temp,'BlockType','From');
         structure = get_param(name,'PortConnectivity');
         if strcmp(get_param(getfullname(structure{1,1}.DstBlock),'BlockType'),'UnitDelay')
             temp2 = get_param(getfullname(structure{1,1}.DstBlock),'Portconnectivity');
             new_name = getfullname(temp2(2).DstBlock);
-            output.go = cat(2,output.go,new_name);
+            new_struct.name = new_name;
+            new_struct.port_associated = go_list{1,k}.name_of_port_associated;
+            output.go = cat(2,output.go,new_struct);
         elseif strcmp(get_param(getfullname(structure{1,1}.DstBlock),'BlockType'),'Demux')
             temp2 = get_param(getfullname(structure{1,1}.DstBlock),'Portconnectivity');
             new_name = getfullname(temp2(2).DstBlock);
-            output.go = cat(2,output.go,new_name);
+            new_struct.name = new_name;
+            new_struct.port_associated = go_list{1,k}.name_of_port_associated;
+            output.go = cat(2,output.go,new_struct);
         elseif strcmp(get_param(getfullname(structure{1,1}.DstBlock),'BlockType'),'DataTypeConversion')
             temp2 = get_param(getfullname(structure{1,1}.DstBlock),'Portconnectivity');
             new_name = getfullname(temp2(2).DstBlock);
-            output.go = cat(2,output.go,new_name);
+            new_struct.name = new_name;
+            new_struct.port_associated = go_list{1,k}.name_of_port_associated;
+            output.go = cat(2,output.go,new_struct);
         else
-            output.go = cat(2,output.go,getfullname(structure{1,1}.DstBlock));
+            new_struct.name = getfullname(structure{1,1}.DstBlock);
+            new_struct.port_associated = go_list{1,k}.name_of_port_associated;
+            output.go = cat(2,output.go,new_struct);
         end
     end
 end

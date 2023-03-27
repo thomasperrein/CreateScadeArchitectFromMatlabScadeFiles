@@ -9,7 +9,7 @@ function output = list_of_go(input, data_base_outport)
                 struct.name_of_port_associated = data_base_outport(type);
                 if strcmp(get_param(name,'BlockType'), 'Goto')
                     struct.name_of_block = name;
-                    output = [output, name];
+                    output = [output, struct];
                 else
                     connectivity = get_param(name,'PortConnectivity');
                     if isstruct(connectivity)

@@ -11,7 +11,7 @@ eng = matlab_engine.start_matlab()
 
 # eng.evalc('prj = openProject('+r"C:\Users\fx622208\MATLAB\Projects\test_api\Test_api.prj"+');')
 
-eng.open_system("../F46_WBCS_Stub_BCM_AS_expurge",nargout = 0)
+eng.open_system("../F46_WBCS_Stub_BCM_AS_expurgem",nargout = 0)
 
 # ModelName = 'fmu'
 # eng.sys_print(ModelName, nargout=0)
