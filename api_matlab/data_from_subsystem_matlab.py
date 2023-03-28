@@ -21,7 +21,7 @@ def data_from_subsystem_matlab(path_simulinkmodel:str, filename:str, subsystem:s
 def data_from_several_subsystem_matlab(path_simulinkmodel:str, filename:str, subsystems:list, path_of_matlab_functions:str):
     """ optimize data_from_subsystem_matlab for several subsystem in a subsystem list of string """
     path = os.getcwd()
-    output_list = []
+    output_list = {}
     os.chdir(path_of_matlab_functions)
     eng = matlab_engine.start_matlab()
     eng.open_system(path_simulinkmodel,nargout = 0)
@@ -29,7 +29,7 @@ def data_from_several_subsystem_matlab(path_simulinkmodel:str, filename:str, sub
     for subsystem in subsystems:
         output1 = eng.get_list_of_block_connected_with_port_associated(filename,subsystem)
         output2 = eng.get_list_of_useless_port(filename,subsystem)
-        output_list.append((output1,output2))
+        output_list[subsystem] = (output1,output2)
     eng.quit()
     os.chdir(path)
     return(output_list)
