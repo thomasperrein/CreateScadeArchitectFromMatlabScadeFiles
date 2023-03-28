@@ -1,15 +1,15 @@
 function output = get_list_of_block_connected_with_port_associated(filepath,subsystem)
     output.from = cell(1,0);
     output.go = cell(1,0);
-    
-    input_port = find_system(strcat(filepath,subsystem),'SearchDepth',1,'BlockType','Inport'); % we search here all the inport block inside the subsystem
+    true_path = strcat(filepath,'/',subsystem);
+    input_port = find_system(true_path,'SearchDepth',1,'BlockType','Inport'); % we search here all the inport block inside the subsystem
     data_base_inport = containers.Map; % declaration of data base inport which is a dictionary where key = object port and value is name of port
 
     for k=1:numel(input_port)
         data_base_inport(get_param(input_port{k,1},'Port')) = get_param(input_port{k,1},'PortName'); % to identify a port object with his name 
     end
     
-    from_list = list_of_from(get_param(strcat(filepath,subsystem),'PortConnectivity'), data_base_inport, '');
+    from_list = list_of_from(get_param(true_path,'PortConnectivity'), data_base_inport, '');
     for k=1:length(from_list)
         new_struct = {};
         if strcmp(get_param(from_list{1,k}.name_of_block,'BlockType'),'From')
@@ -25,13 +25,13 @@ function output = get_list_of_block_connected_with_port_associated(filepath,subs
         output.from = cat(2,output.from,new_struct);
     end
     
-    output_port = find_system(strcat(filepath,subsystem),'SearchDepth',1,'BlockType','Outport');
+    output_port = find_system(true_path,'SearchDepth',1,'BlockType','Outport');
     data_base_outport = containers.Map;
 
     for k=1:numel(output_port)
         data_base_outport(get_param(output_port{k,1},'Port')) = get_param(output_port{k,1},'PortName');
     end
-    go_list = list_of_go(get_param(strcat(filepath,subsystem),'PortConnectivity'),data_base_outport);
+    go_list = list_of_go(get_param(true_path,'PortConnectivity'),data_base_outport);
     for k=1:length(go_list)
         new_struct = {};
         temp = get_param(go_list{1,k}.name_of_block,'GotoTag');

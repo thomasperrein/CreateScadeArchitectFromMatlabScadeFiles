@@ -5,7 +5,7 @@ import sys
 import filecmp
 import os
 
-sys.path.insert(0, r'..\FindLinkBetweenNodesScade')
+sys.path.insert(0,r'../FindLinkBetweenNodesScade') # To be used if you want to test by running this program wo pytest
 
 PATH = "archi/test_package/test.archi"
 PATH2 = "archi/test_package/test2.archi"

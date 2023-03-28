@@ -5,13 +5,14 @@ import sys
 import filecmp
 import os
 
-sys.path.insert(0, r'..\FindLinkBetweenNodesScade')
+sys.path.insert(0,r'../FindLinkBetweenNodesScade') # To be used if you want to test by running this program wo pytest
 
 import model.block_port_link as block_port_link
 
 PATH = "model/test_package/test.diag"
 PATH_TEST = "model/test_package/test_test.diag"
- 
+
+
 def test_unit_block():
     block_test = block_port_link.Block('block1','white','label')
     assert block_test.name == 'block1'

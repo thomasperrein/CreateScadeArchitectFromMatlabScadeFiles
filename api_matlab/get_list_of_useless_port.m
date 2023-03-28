@@ -1,4 +1,5 @@
-function output = get_list_of_useless_port(input)
+function output = get_list_of_useless_port(filepath,subsystem)
+    input = get_param(strcat(filepath,'/',subsystem),'PortConnectivity');
     output = cell(1,0);
     for k=1:length(input)
         if isfield(input(k),'DstBlock') && ~isempty(input(k).DstBlock)
