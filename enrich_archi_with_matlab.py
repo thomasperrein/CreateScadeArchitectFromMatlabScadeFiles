@@ -61,11 +61,12 @@ def enrich_archi_with_matlab(path_simulink:str, filepath:str, subsystems:list, p
     
     archi_object.enrich_links(list_of_links)
     archi_object.enrich_blocks(list_of_blocks)
-
+    archi_object.adapt_colors_w_clustering()
     archi_object.write_archi_file('archi_file_after_fusion.archi')
 
     diag_object_after_matlab = diag.DIAGFile('diag after matlab', list_of_blocks, list_of_links)
     archi_object_after_matlab = archi.ARCHIFile('archi after matlab', list_of_blocks, list_of_links)
+    archi_object_after_matlab.adapt_colors_w_clustering()
     return(archi_object_after_matlab, diag_object_after_matlab)
 
 if __name__ == "__main__":

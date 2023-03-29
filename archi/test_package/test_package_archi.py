@@ -11,6 +11,10 @@ PATH = "archi/test_package/test.archi"
 PATH2 = "archi/test_package/test2.archi"
 PATH3 = "archi/test_package/test3.archi"
 
+PATH_CLUSTER_IN = "archi/test_package/test_clustering_in.archi"
+PATH_CLUSTER_TEST = "archi/test_package/test_clustering_test.archi"
+PATH_CLUSTER_OUT = "archi/test_package/test_clustering_out.archi"
+
 PATH_FAKE = "archi/test_package/test.fake"
 
 import archi.parse_archi as archi
@@ -28,6 +32,13 @@ def test_writing_and_parsing():
     os.remove(PATH2)
     os.remove(PATH3)
 
+def test_clustering():
+    object = archi.parse_archi_file(PATH_CLUSTER_IN)
+    object.adapt_colors_w_clustering()
+    object.write_archi_file(PATH_CLUSTER_TEST)
+    assert filecmp.cmp(PATH_CLUSTER_OUT,PATH_CLUSTER_TEST)
+
+    os.remove(PATH_CLUSTER_TEST)
 
 def test_sanity_check():
     """ Test the sanity check """
@@ -36,3 +47,4 @@ def test_sanity_check():
 
 if __name__ == '__main__':
     test_writing_and_parsing()
+    test_clustering()

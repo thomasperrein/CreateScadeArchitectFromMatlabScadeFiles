@@ -1,6 +1,6 @@
 """ Definition of ARCHI File which is derived of XML file """
 
-from model.block_port_link import Block, Link, InputPort, OutputPort
+from model.block_port_link import Block, Link
 from typing import List
 
 
@@ -39,6 +39,4 @@ class DIAGFile:
     def get_links(self):
         """ return the links of the class """
         return self.links
-
-
 

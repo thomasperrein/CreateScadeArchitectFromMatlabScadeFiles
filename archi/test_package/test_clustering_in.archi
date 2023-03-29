@@ -1,0 +1,954 @@
+<archi>
+	<block name = "BCM_COM_PROC_P5_bis" color = "white" shape = "box">
+		<input name = "V_BCM_COM_XH_SV_PT_Acq_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_PT_Conf_Flt_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_PT_Unconf_Flt_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCM_Config_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_Brkg_On_Wheels_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_Press_Cmd_Rate_Lim_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_SELV_High_Side_Cmd_Order_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_PBSELV_State_Cons_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Braking_State_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_Press_Reg_FT_Act_Cond_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Braking_Mode_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Whl_Filt_Spd_For_AS_W12_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Whl_Filt_Spd_For_AS_W34_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Tacho_Conf_Flt_W12_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Tacho_Conf_Flt_W34_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_AC_State_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_AC_Flight_Phase_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_LOCKED_WHEEL_STG1_W12_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_LOCKED_WHEEL_STG1_W34_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Wheel_Control_Speed_W12_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Wheel_Control_Speed_W34_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Whl_AS_Adp_Gain_W12_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Whl_AS_Adp_Gain_W34_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Decel_Ctrl_Loop_Act_Cond_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Wheels_Global_Spun_Up_Ste_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Global_Reference_Spd_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_Press_Law_Brkg_Press_Cmd_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DCL_Accel_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_Curr_Assy_Tst_Act_Cond_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_Curr_Assy_Tst_Cmd_Cons_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_Braking_Cmd_Cons_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_SV_PT_Cons_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_SV_PT_Cons_Val_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_SV_Current_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_SV_Current_Order_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_SV_PT_Filt_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_PCL_State_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_Whl_AS_Activity_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W12_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W34_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Whl_AS_Inhib_Cond_W12_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Whl_AS_Inhib_Cond_W34_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_Whl_LP_AS_Curr_Order_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Wheel_Speed_Error_W12_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Wheel_Speed_Error_W34_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_Whl_AS_Curr_Order_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_SV_Drift_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_Decel_Law_Brkg_Press_Cmd_P5" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+	</block>
+	<block name = "BCM_COM_PROC_P20_bis" color = "white" shape = "box">
+		<input name = "V_BCM_COM_DFCS_A_Gnd_Spd_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_Gnd_Spd_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_Long_Accel_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_Long_Accel_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_Pitch_Ang_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_Pitch_Ang_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_LMLG_WOWs_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_LMLG_WOWs_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_RMLG_WOWs_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_RMLG_WOWs_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_NLG_WOWs_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_NLG_WOWs_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_WOWs_Val_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_WOWs_Val_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_Decel_Law_Brkg_Press_Cmd_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_DFCS_XH_Braking_Cmd_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_DFCS_XH_Braking_Cmd_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_Decel_Law_Inhib_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_Decel_Law_Inhib_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_TLA_Above_Idle_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_TLA_Above_Idle_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_LG_Lever_Up_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_LMLG_Downlock_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_RMLG_Downlock_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Engine_Running_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCM_Config_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCP_BCM_ALT_SW_ON_CMD_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_MP_BCMA_Alt_Disp_Sw_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_PT_Filt_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_PBSELV_ON_POS_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Hyd_A_Press_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Hyd_B_Press_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Whl_AS_Inhib_Cond_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Whl_AS_Inhib_Cond_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_Whl_LP_AS_Curr_Order_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_PT_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Wheel_Filtered_Speed_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Wheel_Filtered_Speed_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Wheel_Speed_Error_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Wheel_Speed_Error_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_Current_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_PT_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Adhesion_In_Acq_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Adhesion_In_Acq_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Opt_Adhesion_In_Acq_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Opt_Adhesion_In_Acq_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Target_Speed_In_Acq_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Target_Speed_In_Acq_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Big_Slip_WD_Trig_In_Acq_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Big_Slip_WD_Trig_In_Acq_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Big_Gamma_Trig_In_Acq_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Big_Gamma_Trig_In_Acq_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Small_Slip_Trig_In_Acq_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Small_Slip_Trig_In_Acq_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Big_Slip_Trig_In_Acq_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Big_Slip_Trig_In_Acq_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCM_DBCU_INHIBITION_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Engine_1_Running_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Engine_2_Running_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Hyd_A_Press_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Hyd_B_Press_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_Gnd_Spd_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_Long_Accel_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_Pitch_Angle_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_Decel_Law_Inhib_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_Decel_Law_Inhib_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_Gnd_Spd_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_Long_Accel_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_Pitch_Angle_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_LMLG_WOWs_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_RMLG_WOWs_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_NLG_WOWs_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_WOWs_Val_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_LMLG_WOWs_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_RMLG_WOWs_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_NLG_WOWs_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_WOWs_Val_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_DFCS_XH_Brkg_Cmd_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_DFCS_XH_Brkg_Cmd_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_TLA_Above_Idle_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_TLA_Above_Idle_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DBCU_BRK_ORDER_FAIL_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DBCU_DISPATCH_SW_ON_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_DBCU_BRK_CMD_FDBK_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DBCU_FAILED_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DBCU_ALT_MODE_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_ACCU_PT_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCP_PARK_OFF_SW_CMD_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_MP_MAINT_MODE_CMD_28V_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_MP_MAINT_MODE_CMD_GND_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_LNLG_Tire_Press_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_RNLG_Tire_Press_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_LMLG_Outboard_Tire_Press_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_LMLG_Inboard_Tire_Press_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_RMLG_Inboard_Tire_Press_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_RMLG_Outboard_Tire_Press_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_Whl_AS_Curr_Order_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_Current_Readback_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_Whl_AS_Activity_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_SELV_High_Side_Readback_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_DFCS_BCM_Caps_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_DFCS_BCM_Caps_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_PPRG_i_Acquired_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_Current_Readback_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_Current_Order_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_BTS_TEMP_Comp_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DSO_28O_HP_SW1_MONv_01_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_ENABLE_GROUP_RBK_04_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_SELV_Low_Side_Cmd_Order_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_ANO_50mA_1_MONi_03_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_ANO_50mA_1_MONv_03_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_ANO_50mA_1_MONi_04_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_ANO_50mA_1_MONv_04_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_SV_Outputs_Enabling_Cmd_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_TT_State_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_TT_Cmd_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DBCU_Inhib_Assy_Tst_En_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_Curr_Assy_Tst_En_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_SELV_Cmd_Assy_Tst_En_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DBCU_Inhib_Assy_Tst_Cmd_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_SELV_Cmd_Assy_Tst_Cmd_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_TT_In_Progress_Id_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_TT_Rejection_Cause_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_TT_Rejected_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_TT_Completed_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_TT_Result_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_Part_Number_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_Part_Number_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_Serial_Number_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_Serial_Number_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_SW_Revision_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_SW_Revision_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_SW_Version_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_SW_Version_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_PS_Fail_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_PS_Fail_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_RIU_Fail_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_RIU_Fail_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_PS_RIU_SIU_WIRING_WRDC_Fail_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_PS_RIU_SIU_WIRING_WRDC_Fail_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_SIU_WIRING_WRDC_Fail_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_SIU_WIRING_WRDC_Fail_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_Fail_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Left_WRDC_Fail_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_Part_Number_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_Part_Number_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_Serial_Number_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_Serial_Number_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_SW_Revision_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_SW_Revision_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_SW_Version_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_SW_Version_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_PS_Fail_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_PS_Fail_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_RIU_Fail_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_RIU_Fail_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_PS_RIU_SIU_WIRING_WRDC_Fail_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_PS_RIU_SIU_WIRING_WRDC_Fail_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_SIU_WIRING_WRDC_Fail_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_SIU_WIRING_WRDC_Fail_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_Fail_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Right_WRDC_Fail_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_LNLG_Tire_Press_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_LMLG_Outboard_Tire_Press_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_LMLG_Inboard_Tire_Press_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_RNLG_Tire_Press_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_RMLG_Outboard_Tire_Press_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_RMLG_Inboard_Tire_Press_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_REARM_CNT_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_Drift_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_UF_SELV_LS_STUCK_NOT_CMDED_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Wheel_Speed_Cons_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Wheel_Speed_Cons_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_MAINT_MODE_CMD_28V_ACQ_ERR_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_MAINT_MODE_CMD_GND_ACQ_ERR_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_ALT_SW_ACQ_ERR_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_PBSELV_ON_POS_ACQ_ERR_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_DFCS_A_XH_BRK_CMD_RX_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_DFCS_B_XH_BRK_CMD_RX_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_XH_NORM_OVERPRESSURE_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_PT_Cons_Val_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_DFCS_A_LMLGWOW_RX_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_DFCS_A_RMLGWOW_RX_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_DFCS_A_VALWOW_RX_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_DFCS_B_LMLGWOW_RX_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_DFCS_B_RMLGWOW_RX_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_DFCS_B_VALWOW_RX_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Tacho_Conf_Flt_SP_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Tacho_Conf_Flt_SP_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_UTC_Time_Hours_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_UTC_Time_Minutes_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_UTC_Time_Seconds_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DBCU_Inhib_Rdbk_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_PT_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_PT_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_SV_PT_PS_Rdbk_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_SV_PT_PS_Rdbk_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_ACCU_PT_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_ACCU_PT_PS_Rdbk_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_ACCU_PT_PS_Rdbk_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Wheel_Speed_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Wheel_Speed_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_BTS_TEMP_Raw_Volt_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DC28V_SELV_Power_Supply_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_ESC_WonWdiscrete_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DBCU_Inhib_Output_Enabling_Cmd_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCM_DBCU_INHIBITION_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_LMLG_Downlock_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_RMLG_Downlock_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_LG_Lever_Up_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Tacho_Acq_Val_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Tacho_Acq_Val_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_UTC_Date_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_UTC_Time_Sec_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_UTC_Time_Min_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_UTC_Time_Hrs_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCP_BCM_Alt_Sw_On_Cmd_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DBCU_ALT_MODE_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DBCU_FAILED_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DBCU_BRK_ORDER_FAIL_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_DBCU_BRK_CMD_FDBK_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DBCU_DISPATCH_SW_ON_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_MP_MAINT_MODE_CMD_28V_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_MP_MAINT_MODE_CMD_GND_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCP_PARK_OFF_SW_CMD_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_PBSELV_ON_POS_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCM_CCDL_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_SP_To_CP_Link_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_BTS_TEMP_Raw_Volt_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_SELV_LS_STUCK_CMDED_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_PCL_State_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Braking_Norm_FT_Seq_Cons_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Braking_Alt_FT_Seq_Cons_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_LMLG_On_Gnd_State_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_RMLG_On_Gnd_State_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_LMLG_On_Gnd_State_Val_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_RMLG_On_Gnd_State_Val_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Braking_State_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCM_Off_Sanction_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Norm_Brkg_Off_Sanction_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Alt_Sw_Cmd_Cons_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Alt_Sw_Cmd_Cons_Val_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_SV_PT_Cons_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_Braking_Cmd_Cons_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Maint_Mode_State_Cons_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_XH_SV_PT_ACQ_ERR_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_BCM_CP_SP_LINK_FAILED_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_SELV_LS_STUCK_NOT_CMDED_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_XH_SV_PT_OR_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_TACHO_OR_SP_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_TACHO_OR_SP_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCM_Hardware_Part_Number_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCM_Software_Part_Number_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_BCM_Hardware_Serial_Number_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_TACHO_TEST_MONv_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DSO_GO_HP_MONv_01_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_DFCS_XH_Alt_Braking_Cmd_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_DFCS_XH_Alt_Braking_Cmd_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_A_DFCS_XH_Alt_Brkg_Cmd_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_DFCS_B_DFCS_XH_Alt_Brkg_Cmd_Acq_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_CF_PARK_SW_ACQ_ERR_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Braking_State_From_Opp_BCM_Acq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_FTI_Taxiing_Brkg_Inhib_Logic_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_Braking_Cmd_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_SELV_High_Side_Cmd_Order_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Wheels_Global_Spun_Up_Ste_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Global_Reference_Spd_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_AC_State_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_AC_Flight_Phase_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Braking_Mode_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Brkg_Norm_FT_Prog_Sts_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Brkg_Norm_FT_Cond_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Braking_Norm_FT_Seq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Brkg_Alt_FT_Prog_Sts_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Braking_Alt_FT_Seq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Brkg_Alt_FT_Cond_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_Press_Reg_FT_Act_Cond_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_Press_Law_Brkg_Press_Cmd_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_DBCU_Inhib_Order_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_BCM_Validity_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Disp_Sw_Cmd_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Disp_Sw_Cmd_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Braking_State_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_Brkg_On_Wheels_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_Press_Cmd_Rate_Lim_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_PBSELV_State_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Hyd_A_Press_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Hyd_B_Press_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Hyd_A_Press_State_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Hyd_B_Press_State_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Wheel_Control_Speed_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Wheel_Control_Speed_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Big_Gamma_Trig_Out_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Big_Gamma_Trig_Out_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Big_Slip_Trig_Out_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Big_Slip_Trig_Out_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Big_Slip_WD_Trig_Out_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Big_Slip_WD_Trig_Out_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Small_Slip_Trig_Out_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Small_Slip_Trig_Out_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Target_Speed_Out_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Target_Speed_Out_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Adhesion_Out_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Adhesion_Out_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Opt_Adhesion_Out_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Opt_Adhesion_Out_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Whl_AS_Adp_Gain_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Whl_AS_Adp_Gain_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Maint_Mode_State_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_005_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_006_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_021_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_022_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_030_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_031_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_032_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_033_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_040_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_041_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_042_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_043_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_050_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_DFCS_Label_105_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Wheel_Speed_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Wheel_Speed_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_TACHO_Fail_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_TACHO_Fail_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_001_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_002_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_003_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_004_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_DFCS_Label_101_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_DFCS_Label_102_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_DFCS_Label_103_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_DFCS_Label_104_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_XH_Brake_Temp_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_XH_Brake_Temp_Sensor_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_010_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_011_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_LNLG_Tire_Press_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_RNLG_Tire_Press_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_LMLG_Outboard_Tire_Press_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_LMLG_Inboard_Tire_Press_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_RMLG_Inboard_Tire_Press_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_RMLG_Outboard_Tire_Press_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_LNLG_Tire_Press_Sensor_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_RNLG_Tire_Press_Sensor_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_LMLG_Outboard_Tire_Press_Sensor_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_LMLG_Inboard_Tire_Press_Sensor_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_RMLG_Inboard_Tire_Press_Sensor_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_RMLG_Outboard_Tire_Press_Sensor_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_TPIS_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_012_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_013_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_014_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_015_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_016_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_017_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_XH_Curr_Ord_Before_AS_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_XH_AS_Curr_Order_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_XH_SV_Current_Readback_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_XH_SV_PT_In_Bar_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_XH_SV_PT_In_PSI_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Antiskid_Activity_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_ACCU_PT_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_XH_SV_PT_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_XH_SV_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_ACCU_PT_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SELV_Disc_Sts_Rdbk_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SELV_Disc_Sts_Rdbk_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SELV_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_020_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_036_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_037_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_DFCS_Label_106_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_DFCS_Label_107_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_034_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_Avionics_Label_035_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Park_Brake_ON_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Park_Brake_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Norm_FT_In_Progress_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Alt_FT_In_Progress_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Alt_FT_DFCS_Brkg_Req_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Brk_Residual_Press_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Brk_Tests_Not_Performed_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Avionics_Comm_Fail_RX_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_DFCS_Decel_Law_Inhib_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_XH_Brkg_Cmd_Fdbk_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_DFCS_XH_Brk_Pdl_Ord_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_DFCS_A_Comm_Fail_RX_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_DFCS_B_Comm_Fail_RX_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_DFCS_A_Capsule_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_DFCS_B_Capsule_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Pinprog_1_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Pinprog_2_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Pinprog_3_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_PP_Channel_ID_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_DBCU_Dispatch_Conf_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Maint_Mode_Active_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Maint_Mode_Req_GND_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Maint_Mode_Req_28V_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Pinprog_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Norm_Brake_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_BCM_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_DBCU_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Alternate_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_DBCU_XH_Brk_Cmd_Fdbk_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_DBCU_Inhib_Opp_Side_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_DBCU_Alt_Mode_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_SSM_DFCS_Label_100_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Global_Wheel_Spd_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LMLG_Dnlk_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_RMLG_Dnlk_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LG_Lever_Up_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_BCP_BCM_ALT_SW_ON_CMD_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_MP_MAINT_MODE_CMD_GND_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_MP_MAINT_MODE_CMD_28V_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_MP_BCMA_ALT_DISP_SW_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_PBSELV_ON_POS_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_DBCU_BRK_ORDER_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_DBCU_DISPATCH_SW_ON_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_DBCU_BRK_CMD_FDBK_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_DBCU_FAILED_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_DBCU_ALT_MODE_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Opp_BCM_DBCU_INHIB_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_SV_Current_Order_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_SELV_High_Side_Cmd_Order_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_DBCU_Inhib_Order_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BCM_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_DFCS_A_RX_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_DFCS_B_RX_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_MAINTENANCE_MODE_DIS_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_PARK_BRK_STATUS_DIS_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_DBCU_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_DBCU_BRK_ORDER_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_HYD_A_LOW_PRESS_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_HYD_B_LOW_PRESS_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_ACCU_LOW_PRESS_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_ACCU_PT_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BSELV_CMD_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BSELV_JCL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BSELV_JOP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_AC_State_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_AC_Flight_Phase_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Braking_Mode_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Braking_Norm_FT_Seq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Braking_Alt_FT_Seq_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_LG_LEVER_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_LMLG_DOWNLOCK_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_RMLG_DOWNLOCK_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_BCM_TARGET_HW_ID_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_TT_in_progress_id_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_TT_rejection_cause_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_TT_rejected_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_TT_completed_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_TT_result_significant_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Decel_Ctrl_Loop_Act_Cond_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Maint_Itv_Function_Req_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_SV_Curr_Assy_Tst_Act_Cond_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Left_Outboard_PS_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Left_Inboard_PS_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Left_Nose_PS_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Left_Outboard_RIU_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Left_Inboard_RIU_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Left_Nose_RIU_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Left_Outboard_PS_RIU_SIU_WIRE_WRDC_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Left_Inboard_PS_RIU_SIU_WIRE_WRDC_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Left_Nose_PS_RIU_SIU_WIRE_WRDC_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Left_Outboard_SIU_WIRE_WRDC_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Left_Inboard_SIU_WIRE_WRDC_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Left_Nose_SIU_WIRE_WRDC_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Right_Outboard_PS_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Right_Inboard_PS_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Right_Nose_PS_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Right_Outboard_RIU_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Right_Inboard_RIU_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Right_Nose_RIU_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Right_Outboard_PS_RIU_SIU_WIRE_WRDC_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Right_Inboard_PS_RIU_SIU_WIRE_WRDC_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Right_Nose_PS_RIU_SIU_WIRE_WRDC_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Right_Outboard_SIU_WIRE_WRDC_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Right_Inboard_SIU_WIRE_WRDC_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_Right_Nose_SIU_WIRE_WRDC_Fail_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LEFT_WRDC_HW_PN_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LEFT_WRDC_HW_SN_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LEFT_WRDC_SW_VERSION_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LEFT_WRDC_SW_REVISION_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_RIGHT_WRDC_HW_PN_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_RIGHT_WRDC_HW_SN_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_RIGHT_WRDC_SW_VERSION_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_RIGHT_WRDC_SW_REVISION_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Engine_Run_Up_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Park_Switch_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Alternate_Switch_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_A429_Minor_Fault_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_UF_SELV_PS_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_SV_PT_Conf_Flt_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_XH_SV_PT_Unconf_Flt_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Tacho_Conf_Flt_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Tacho_Unconf_Flt_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Tacho_Conf_Flt_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Tacho_Unconf_Flt_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_ESC_WonWdiscrete_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_BCP_PARK_OFF_SW_CMD_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_ACCU_PT_Power_Supply_Rdbk_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_SV_PT_Power_Supply_Rdbk_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Braking_Type_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Braking_State_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_SELV_Low_Speed_Logic_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Decel_Ctrl_Loop_Act_Cond_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_SELV_Low_Side_Cmd_Order_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_RMLG_Global_Wheel_Spd_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LMLG_Global_Wheel_Spd_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Global_Reference_Spd_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LMLG_On_Ground_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_RMLG_On_Ground_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_NLG_On_Ground_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LMLG_On_Ground_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_RMLG_On_Ground_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_NLG_On_Ground_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LMLG_Downlock_State_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_RMLG_Downlock_State_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LMLG_Dnlk_State_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_RMLG_Dnlk_State_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LG_Lever_State_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LG_Lever_Ste_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_TLA_State_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_TLA_State_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Spun_Up_Cond_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Spun_Up_Cond_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Wheels_Global_Spun_Up_Ste_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Whl_AS_Inhib_Cond_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Whl_AS_Inhib_Cond_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Decel_Law_Inhib_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Decel_Law_Inhib_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Brkg_Norm_FT_Cond_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Brkg_Alt_FT_Cond_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_DBCU_Alt_Mode_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_DBCU_Alt_Mode_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Maint_Mode_State_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Park_Sw_Cmd_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Park_Sw_Cmd_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_PBSELV_State_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_PBSELV_State_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Alt_Sw_Cmd_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Alt_Sw_Cmd_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Disp_Sw_Cmd_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Disp_Sw_Cmd_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_Braking_Cmd_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_Press_Cmd_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_Press_Cmd_Rate_Lim_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Hyd_A_Press_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Hyd_B_Press_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Hyd_A_Press_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Hyd_B_Press_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_SV_PT_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_SV_PT_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_ACCU_PT_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_ACCU_PT_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Wheel_Control_Speed_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Wheel_Control_Speed_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_AC_Gnd_Spd_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_AC_Pitch_Ang_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_AC_Long_Accel_Cons_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_AC_Long_Accel_Filt_Corr_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_AC_Gnd_Spd_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_AC_Pitch_Ang_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_AC_Long_Accel_Cons_Val_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_PCL_State_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Automate_State_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Automate_State_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Seq_Preland_Test_Cons_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Seq_Alt_Test_Cons_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LMLG_On_Ground_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_RMLG_On_Ground_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_LMLG_On_Ground_Val_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_RMLG_On_Ground_Val_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Braking_State_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_BCM_Off_Sanction_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Norm_Brkg_Off_Sanction_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Alt_Sw_Cmd_Cons_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Alt_Sw_Cmd_Cons_Val_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_SV_PT_Cons_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_Braking_Cmd_Cons_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_SV_PT_Cons_Val_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Maint_Mode_State_Cons_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_SV_Outputs_Enabling_Cmd_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_DBCU_Inhib_Output_Enabling_Cmd_SP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_DBCU_MODE_DIS_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_DBCU_INHIBITION_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BCM_DBCU_SIMULTANEOUS_ACTIVITY_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BCM_CAN_BCM_CCDL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BCM_ACCU_PT_SUPPLY_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BCM_SERVO_PT_SUPPLY_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BTS_XH_BCM_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BCM_GENIO_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_TACHO_BCM_FAIL_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_TACHO_BCM_FAIL_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_XH_SV_CMD_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_SELV_PRV_OPEN_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_DISPATCH_SWITCH_DIS_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_XH_SV_PT_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BTS_XH_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_TACHO_FAIL_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_TACHO_FAIL_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_ESC_WOW_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BCM_SV_XH_CONTINUITY_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BCM_XH_SV_JCL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BCM_XH_SV_DRIFT_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_XH_SV_JOP_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_DBCU_XH_SERVO_CLOSED_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_BCM_SELV_CONTINUITY_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_DBCU_SELV_CLOSED_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_WRDC_L_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_WRDC_R_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_DGVal_Message_034_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_DGVal_Message_035_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_DGVal_Message_081_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_DGVal_Message_082_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_BCM_HW_PN_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_BCM_HW_SN_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_BCM_SW_PN_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_DBCU_Inhib_Assy_Tst_Ena_Echo_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_DBCU_Inhib_Assy_Tst_Cmd_Echo_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_SV_Curr_Assy_Tst_Ena_Echo_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_SV_Curr_Assy_Tst_Cmd_Echo_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_SELV_Cmd_Assy_Tst_Ena_Echo_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_SELV_Cmd_Assy_Tst_Cmd_Echo_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Default_Because_Wrong_Pin_Prog_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Default_Because_Swap_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Norm_Brkg_Availability_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_CF_LOCKED_WHEEL_STG1_W12_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_CF_LOCKED_WHEEL_STG1_W34_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_XH_Brake_Temp_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_FB_DFCS_ALT_FT_CMD_FAIL_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_ETH_Taxiing_Brkg_Inhib_Logic_P20" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+	</block>
+	<block name = "BCM_COM_PROC_P2_5_bis" color = "white" shape = "box">
+		<input name = "V_BCM_COM_Tacho_Acq_W12_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Tacho_Unconf_Flt_W12_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Tacho_Conf_Flt_W12_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Tacho_Acq_W34_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Tacho_Unconf_Flt_W34_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Tacho_Conf_Flt_W34_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W12_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_XH_Press_Cmd_Rate_Lim_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W34_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Global_Reference_Spd_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<input name = "V_BCM_COM_Wheels_Global_Spun_Up_Ste_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Wheel_Speed_Cons_W12_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Wheel_Speed_W12_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Wheel_Speed_Cons_W34_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Wheel_Speed_W34_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Whl_Filt_Spd_For_AS_W12_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Wheel_Filtered_Speed_W12_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Whl_Filt_Spd_For_AS_W34_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_Wheel_Filtered_Speed_W34_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+		<output name = "V_BCM_COM_DCL_Accel_P2" color = "white" icon = "'static/input_output.png'" shape = "box"/>
+	</block>
+	<link name = "link1" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Braking_Mode_P5"/>
+		<output name = "V_BCM_COM_Braking_Mode_P20"/>
+	</link>
+	<link name = "link2" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Whl_AS_Adp_Gain_W34_P5"/>
+		<output name = "V_BCM_COM_Whl_AS_Adp_Gain_W34_P20"/>
+	</link>
+	<link name = "link3" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_SV_PT_Unconf_Flt_P5"/>
+		<output name = "V_BCM_COM_XH_SV_PT_Unconf_Flt_P20"/>
+	</link>
+	<link name = "link4" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_Press_Reg_FT_Act_Cond_P5"/>
+		<output name = "V_BCM_COM_XH_Press_Reg_FT_Act_Cond_P20"/>
+	</link>
+	<link name = "link5" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_SELV_High_Side_Cmd_Order_P5"/>
+		<output name = "V_BCM_COM_SELV_High_Side_Cmd_Order_P20"/>
+	</link>
+	<link name = "link6" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Tacho_Conf_Flt_W34_P5"/>
+		<output name = "V_BCM_COM_Tacho_Conf_Flt_W34_P20"/>
+	</link>
+	<link name = "link7" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Decel_Ctrl_Loop_Act_Cond_P5"/>
+		<output name = "V_BCM_COM_Decel_Ctrl_Loop_Act_Cond_P20"/>
+	</link>
+	<link name = "link8" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Tacho_Conf_Flt_W12_P5"/>
+		<output name = "V_BCM_COM_Tacho_Conf_Flt_W12_P20"/>
+	</link>
+	<link name = "link9" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_Press_Cmd_Rate_Lim_P5"/>
+		<output name = "V_BCM_COM_XH_Press_Cmd_Rate_Lim_P20"/>
+	</link>
+	<link name = "link10" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Wheels_Global_Spun_Up_Ste_P5"/>
+		<output name = "V_BCM_COM_Wheels_Global_Spun_Up_Ste_P20"/>
+	</link>
+	<link name = "link11" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Global_Reference_Spd_P5"/>
+		<output name = "V_BCM_COM_Global_Reference_Spd_P20"/>
+	</link>
+	<link name = "link12" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_Press_Law_Brkg_Press_Cmd_P5"/>
+		<output name = "V_BCM_COM_XH_Press_Law_Brkg_Press_Cmd_P20"/>
+	</link>
+	<link name = "link13" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_CF_LOCKED_WHEEL_STG1_W12_P5"/>
+		<output name = "V_BCM_COM_CF_LOCKED_WHEEL_STG1_W12_P20"/>
+	</link>
+	<link name = "link14" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_PBSELV_State_Cons_P5"/>
+		<output name = "V_BCM_COM_PBSELV_State_Cons_P20"/>
+	</link>
+	<link name = "link15" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Wheel_Control_Speed_W34_P5"/>
+		<output name = "V_BCM_COM_Wheel_Control_Speed_W34_P20"/>
+	</link>
+	<link name = "link16" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_AC_Flight_Phase_P5"/>
+		<output name = "V_BCM_COM_AC_Flight_Phase_P20"/>
+	</link>
+	<link name = "link17" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_SV_PT_Conf_Flt_P5"/>
+		<output name = "V_BCM_COM_XH_SV_PT_Conf_Flt_P20"/>
+	</link>
+	<link name = "link18" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_Brkg_On_Wheels_P5"/>
+		<output name = "V_BCM_COM_XH_Brkg_On_Wheels_P20"/>
+	</link>
+	<link name = "link19" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_SV_Curr_Assy_Tst_Act_Cond_P5"/>
+		<output name = "V_BCM_COM_XH_SV_Curr_Assy_Tst_Act_Cond_P20"/>
+	</link>
+	<link name = "link20" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_Braking_Cmd_Cons_P5"/>
+		<output name = "V_BCM_COM_XH_Braking_Cmd_Cons_P20"/>
+	</link>
+	<link name = "link21" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Braking_State_P5"/>
+		<output name = "V_BCM_COM_Braking_State_P20"/>
+	</link>
+	<link name = "link22" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_CF_LOCKED_WHEEL_STG1_W34_P5"/>
+		<output name = "V_BCM_COM_CF_LOCKED_WHEEL_STG1_W34_P20"/>
+	</link>
+	<link name = "link23" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Whl_AS_Adp_Gain_W12_P5"/>
+		<output name = "V_BCM_COM_Whl_AS_Adp_Gain_W12_P20"/>
+	</link>
+	<link name = "link24" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Wheel_Control_Speed_W12_P5"/>
+		<output name = "V_BCM_COM_Wheel_Control_Speed_W12_P20"/>
+	</link>
+	<link name = "link25" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_AC_State_P5"/>
+		<output name = "V_BCM_COM_AC_State_P20"/>
+	</link>
+	<link name = "link26" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Whl_Filt_Spd_For_AS_W34_P5"/>
+		<output name = "V_BCM_COM_Whl_Filt_Spd_For_AS_W34_P2"/>
+	</link>
+	<link name = "link27" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_DCL_Accel_P5"/>
+		<output name = "V_BCM_COM_DCL_Accel_P2"/>
+	</link>
+	<link name = "link28" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Whl_Filt_Spd_For_AS_W12_P5"/>
+		<output name = "V_BCM_COM_Whl_Filt_Spd_For_AS_W12_P2"/>
+	</link>
+	<link name = "link29" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Whl_AS_Inhib_Cond_W34_P20"/>
+		<output name = "V_BCM_COM_Whl_AS_Inhib_Cond_W34_P5"/>
+	</link>
+	<link name = "link30" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_SV_Current_Order_P20"/>
+		<output name = "V_BCM_COM_XH_SV_Current_Order_P5"/>
+	</link>
+	<link name = "link31" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_SV_Current_P20"/>
+		<output name = "V_BCM_COM_XH_SV_Current_P5"/>
+	</link>
+	<link name = "link32" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Whl_AS_Inhib_Cond_W12_P20"/>
+		<output name = "V_BCM_COM_Whl_AS_Inhib_Cond_W12_P5"/>
+	</link>
+	<link name = "link33" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W12_P20"/>
+		<output name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W12_P5"/>
+	</link>
+	<link name = "link34" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_PCL_State_P20"/>
+		<output name = "V_BCM_COM_XH_PCL_State_P5"/>
+	</link>
+	<link name = "link35" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_SV_PT_Cons_Val_P20"/>
+		<output name = "V_BCM_COM_XH_SV_PT_Cons_Val_P5"/>
+	</link>
+	<link name = "link36" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_Whl_AS_Activity_P20"/>
+		<output name = "V_BCM_COM_XH_Whl_AS_Activity_P5"/>
+	</link>
+	<link name = "link37" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_Whl_LP_AS_Curr_Order_P20"/>
+		<output name = "V_BCM_COM_XH_Whl_LP_AS_Curr_Order_P5"/>
+	</link>
+	<link name = "link38" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_Decel_Law_Brkg_Press_Cmd_P20"/>
+		<output name = "V_BCM_COM_XH_Decel_Law_Brkg_Press_Cmd_P5"/>
+	</link>
+	<link name = "link39" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_SV_PT_Filt_P20"/>
+		<output name = "V_BCM_COM_XH_SV_PT_Filt_P5"/>
+	</link>
+	<link name = "link40" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Wheel_Speed_Error_W12_P20"/>
+		<output name = "V_BCM_COM_Wheel_Speed_Error_W12_P5"/>
+	</link>
+	<link name = "link41" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_Whl_AS_Curr_Order_P20"/>
+		<output name = "V_BCM_COM_XH_Whl_AS_Curr_Order_P5"/>
+	</link>
+	<link name = "link42" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W34_P20"/>
+		<output name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W34_P5"/>
+	</link>
+	<link name = "link43" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Wheel_Speed_Error_W34_P20"/>
+		<output name = "V_BCM_COM_Wheel_Speed_Error_W34_P5"/>
+	</link>
+	<link name = "link44" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_SV_PT_Cons_P20"/>
+		<output name = "V_BCM_COM_XH_SV_PT_Cons_P5"/>
+	</link>
+	<link name = "link45" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_SV_Drift_P20"/>
+		<output name = "V_BCM_COM_XH_SV_Drift_P5"/>
+	</link>
+	<link name = "link46" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Wheel_Speed_W12_P20"/>
+		<output name = "V_BCM_COM_Wheel_Speed_W12_P2"/>
+	</link>
+	<link name = "link47" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Wheel_Speed_W34_P20"/>
+		<output name = "V_BCM_COM_Wheel_Speed_W34_P2"/>
+	</link>
+	<link name = "link48" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Wheel_Filtered_Speed_W34_P20"/>
+		<output name = "V_BCM_COM_Wheel_Filtered_Speed_W34_P2"/>
+	</link>
+	<link name = "link49" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Wheel_Speed_Cons_W34_P20"/>
+		<output name = "V_BCM_COM_Wheel_Speed_Cons_W34_P2"/>
+	</link>
+	<link name = "link50" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Wheel_Speed_Cons_W12_P20"/>
+		<output name = "V_BCM_COM_Wheel_Speed_Cons_W12_P2"/>
+	</link>
+	<link name = "link51" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Wheel_Filtered_Speed_W12_P20"/>
+		<output name = "V_BCM_COM_Wheel_Filtered_Speed_W12_P2"/>
+	</link>
+	<link name = "link52" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W12_P2"/>
+		<output name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W12_P5"/>
+	</link>
+	<link name = "link53" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W34_P2"/>
+		<output name = "V_BCM_COM_Whl_LP_AS_Curr_Order_W34_P5"/>
+	</link>
+	<link name = "link54" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Tacho_Conf_Flt_W34_P2"/>
+		<output name = "V_BCM_COM_Tacho_Conf_Flt_W34_P20"/>
+	</link>
+	<link name = "link55" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Tacho_Conf_Flt_W12_P2"/>
+		<output name = "V_BCM_COM_Tacho_Conf_Flt_W12_P20"/>
+	</link>
+	<link name = "link56" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Tacho_Unconf_Flt_W34_P2"/>
+		<output name = "V_BCM_COM_Tacho_Unconf_Flt_W34_P20"/>
+	</link>
+	<link name = "link57" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Global_Reference_Spd_P2"/>
+		<output name = "V_BCM_COM_Global_Reference_Spd_P20"/>
+	</link>
+	<link name = "link58" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_XH_Press_Cmd_Rate_Lim_P2"/>
+		<output name = "V_BCM_COM_XH_Press_Cmd_Rate_Lim_P20"/>
+	</link>
+	<link name = "link59" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Wheels_Global_Spun_Up_Ste_P2"/>
+		<output name = "V_BCM_COM_Wheels_Global_Spun_Up_Ste_P20"/>
+	</link>
+	<link name = "link60" color = "black" dir = "forward">
+		<input name = "V_BCM_COM_Tacho_Unconf_Flt_W12_P2"/>
+		<output name = "V_BCM_COM_Tacho_Unconf_Flt_W12_P20"/>
+	</link>
+</archi>
