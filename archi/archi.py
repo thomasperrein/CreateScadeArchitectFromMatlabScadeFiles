@@ -1,6 +1,6 @@
 """ Definition of ARCHI File which is derived of XML file """
 
-from model.block_port_link import Block, Link, InputPort, OutputPort
+from model.block_port_link import Block, Link
 from typing import List
 
 
@@ -15,14 +15,13 @@ class ARCHIFile:
         
     def write_archi_file(self, path:str) -> None:
         """ write the archi file corresponding to the object """
-        
         f = open(path, 'w')
         f.write('<archi>\n')
         f.write(self.write_block())
         f.write(self.write_link())
         f.write('</archi>\n')
         f.close()
-        print(f"File {self.name} written in {path}")
+        print(f"File {self.name} written at {path}")
 
     def add_block(self, block:Block):
         """ add a block to the class """
@@ -70,3 +69,11 @@ class ARCHIFile:
         return text
 
 
+    def enrich_blocks(self, new_blocks):
+        """ mix the previous attributes blocks with new blocks by adding new ports to already declared blocks and new blocks with their ports to the list of blocks """
+        pass
+
+
+    def enrich_links(self, new_links):
+        """ add new links if they haven't been already declared) """
+        pass

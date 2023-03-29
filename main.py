@@ -28,9 +28,7 @@ def main():
     """ main programm """
     archi_empty = archi.ARCHIFile('',[],[])
     archi_afterscade = enrich_scade.enrich_archi_with_scade(COLOR,PATH_SESSION_SCADE, archi_empty)
-    print(archi_afterscade)
     archi_aftermatlab = enrich_matlab.enrich_archi_with_matlab(PATH_SIMULINK_MODEL, PATH_FILEPATH, SUBSYSTEM_LISTS, PATH_API_MATLAB, archi_afterscade)
-    print(archi_aftermatlab)
 
 if __name__ == "__main__":
     main()

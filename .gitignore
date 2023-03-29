@@ -1,7 +1,9 @@
 __pycache__
 .pytest_cache
 my_file*.diag
+my_file*.archi
 my_file*.png
+archi_file*.archi
 *.asv
 .vscode
 F46*.slx

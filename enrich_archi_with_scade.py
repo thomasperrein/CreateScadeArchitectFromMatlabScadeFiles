@@ -6,6 +6,7 @@ from model.block_port_link import Block, InputPort, OutputPort, Link
 import scade_env
 import scade.model.suite, scade.model.project
 from archi import *
+import diag.diag as diag
 
 import re
 
@@ -45,7 +46,6 @@ def enrich_archi_with_scade(COLOR:list, PATH_SESSION_SCADE:str, archi_object:arc
         for output in data[i]['outputs']:
             vv = OutputPort(b,output + re.findall(r'_P\d+',i)[0],**styleCSS_port)
             list_of_outputs.append(vv)
-        list_of_to_file.append(b.write_block_w_port())
         list_of_block.append(b)
     
     links = {}
@@ -77,21 +77,15 @@ def enrich_archi_with_scade(COLOR:list, PATH_SESSION_SCADE:str, archi_object:arc
     for link in links:
         list_of_links.append(Link(OutputPort(fake_block,links[link]['output']),InputPort(fake_block,links[link]['input']),link,**styleCSS_link))
     
+    diag_object = diag.DIAGFile('diag after scade', list_of_block, list_of_links)
+    diag_object.write_diag_file('my_file.diag')
+
     for block in list_of_block:
         archi_object.add_block(block)
-
     for link in list_of_links:
         archi_object.add_link(link)
-
-    f = open('my_file.diag','w')
-    f.write('blockdiag admin {\n')
-    # delete_unlinked_block()
-    for to_file in list_of_to_file:
-        f.write(to_file)
-    for link in list_of_links:
-        f.write(link.write_link() + ';\n')
-    f.write('}\n')
-
+    archi_object.write_archi_file('my_file.archi')
+    
     return(archi_object)
 
 if __name__ == "__main__":

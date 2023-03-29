@@ -22,7 +22,7 @@ class DIAGFile:
         for link in self.links:
             f.write(link.write_link() + ';\n')
         f.write('}\n')
-        print(f"file written at {path}")
+        print(f"File {self.name} written at {path}")
 
     def add_block(self, block:Block):
         """ add a block to the class """
