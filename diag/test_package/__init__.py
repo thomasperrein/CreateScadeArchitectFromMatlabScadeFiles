@@ -1,2 +1,2 @@
-# import os
-# os.chdir(r'C:\TRAVAIL\GenerationModel\FindLinkBetweenNodesScade')
+import os
+os.chdir(r'C:\TRAVAIL\GenerationModel\FindLinkBetweenNodesScade')
