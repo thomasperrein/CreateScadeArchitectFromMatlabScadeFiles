@@ -2,15 +2,13 @@
 
 from model.block_port_link import Block, Link
 from typing import List
+from file.file import File
 
 
-class DIAGFile:
+class DIAGFile(File):
     """ Diag file object """
     def __init__(self, name:str, blocks:List[Block], links:List[Link]) -> None:
-        """ method constructor to define object """
-        self.name = name
-        self.blocks = blocks
-        self.links = links
+        super().__init__(name, blocks, links)
         
         
     def write_diag_file(self, path:str) -> None:
@@ -23,20 +21,4 @@ class DIAGFile:
             f.write(link.write_link() + ';\n')
         f.write('}\n')
         print(f"File {self.name} written at {path}")
-
-    def add_block(self, block:Block):
-        """ add a block to the class """
-        self.blocks.append(block)
-
-    def add_link(self, link:Link):
-        """ add a link to the class """
-        self.links.append(link)
-
-    def get_blocks(self):
-        """ return the blocks of the class """
-        return self.blocks
-
-    def get_links(self):
-        """ return the links of the class """
-        return self.links
 
