@@ -40,6 +40,14 @@ def test_clustering():
 
     os.remove(PATH_CLUSTER_TEST)
 
+def test_filecmp():
+    object = archi.parse_archi_file(PATH_CLUSTER_IN)
+    diag_conv = object.convert_to_diag()
+    assert diag_conv.filecmp(object)
+    object.adapt_colors_w_clustering()
+    assert diag_conv.filecmp(object)
+
+
 def test_sanity_check():
     """ Test the sanity check """
     assert not(archi.sanity_check(PATH_FAKE))
