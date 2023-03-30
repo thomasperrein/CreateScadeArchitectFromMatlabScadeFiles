@@ -7,6 +7,8 @@ import os
 
 sys.path.insert(0,r'../FindLinkBetweenNodesScade') # To be used if you want to test by running this program wo pytest
 
+from model.block_port_link import Block
+
 PATH = "archi/test_package/test.archi"
 PATH2 = "archi/test_package/test2.archi"
 PATH3 = "archi/test_package/test3.archi"
@@ -40,12 +42,16 @@ def test_clustering():
 
     os.remove(PATH_CLUSTER_TEST)
 
+
 def test_filecmp():
+    """ Test de la comparaison de fichier et du caractère modificateur de adapt_colors_w_clustering """
     object = archi.parse_archi_file(PATH_CLUSTER_IN)
     diag_conv = object.convert_to_diag()
     assert diag_conv.filecmp(object)
     object.adapt_colors_w_clustering()
     assert diag_conv.filecmp(object)
+    object.add_block(Block('new block'))
+    assert not(diag_conv.filecmp(object))
 
 
 def test_sanity_check():
@@ -56,3 +62,4 @@ def test_sanity_check():
 if __name__ == '__main__':
     test_writing_and_parsing()
     test_clustering()
+    test_filecmp()

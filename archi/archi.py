@@ -3,6 +3,7 @@ from model.block_port_link import Block, Link
 from typing import List
 from file.file import File
 from diag.diag import DIAGFile
+import copy
 
 class ARCHIFile(File):
     """ Archi file object """
@@ -62,4 +63,6 @@ class ARCHIFile(File):
 
     
     def convert_to_diag(self) -> DIAGFile:
-        return(DIAGFile(self.name, self.blocks, self.links))
+        new_blocks = copy.copy(self.blocks)
+        new_links = copy.copy(self.links)
+        return(DIAGFile(self.name, new_blocks, new_links))

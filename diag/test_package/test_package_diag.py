@@ -58,6 +58,7 @@ def test_writing():
     os.remove(PATH)
 
 def test_file_cmp():
+    """ test de la comparaison des fichiers """
     styleCSS_block = {
         'color' : 'white',
         'shape' : 'square'

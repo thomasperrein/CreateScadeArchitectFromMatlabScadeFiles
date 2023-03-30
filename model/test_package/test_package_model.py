@@ -12,6 +12,14 @@ import model.block_port_link as block_port_link
 PATH = "model/test_package/test.diag"
 PATH_TEST = "model/test_package/test_test.diag"
 
+def test_CSS():
+    css = block_port_link.CSS(name='test', color='red')
+    assert css.name == 'test'
+    assert css.color == 'red'
+    assert css.write_parameter('name') == 'name = "test"'
+    assert css.write_parameter('color') == 'color = "red"'
+    assert css.write_attributes() == '[color = "red"]'
+
 
 def test_unit_block():
     block_test = block_port_link.Block('block1','white','label')
@@ -29,6 +37,34 @@ def test_unit_block():
 
     assert block_test.get_name() == 'block11'
 
+
+def test_unit_block2():
+    """ another test """
+    block = block_port_link.Block(name='test', color='red')
+    assert block.name == 'test'
+    assert block.color == 'red'
+    assert block.write_parameter('name') == 'name = "test"'
+    assert block.write_parameter('color') == 'color = "red"'
+    assert block.write_attributes() == '[color = "red"]'
+    block.set_name('new_test')
+    assert block.name == 'new_test'
+    assert block.get_name() == 'new_test'
+    block.change_color('green')
+    assert block.color == 'green'
+    input_port = block_port_link.InputPort(block, 'input1')
+    output_port = block_port_link.OutputPort(block, 'output1')
+    assert input_port.block == block
+    assert input_port.name == 'input1'
+    assert output_port.block == block
+    assert output_port.name == 'output1'
+    assert block.get_input_ports() == [input_port]
+    assert block.get_output_ports() == [output_port]
+    assert block.get_all_ports() == [input_port, output_port]
+    block2 = block_port_link.Block(name='test2', color='blue')
+    link = block_port_link.Link(output_port, input_port,color='black')
+    assert link.output_port == output_port
+    assert link.input_port == input_port
+    assert link.write_link() == '\toutput1 -> input1 [color = "black"]'
 
 
 def test_unit_port():
@@ -143,3 +179,6 @@ def test_global_2():
 
     os.remove(PATH_TEST)
 
+if __name__ == "__main__":
+    test_global_2()
+    test_unit_block2()

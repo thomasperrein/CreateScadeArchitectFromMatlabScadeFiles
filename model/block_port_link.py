@@ -1,5 +1,5 @@
 #coding : utf-8
-""" definition of the class Block """
+""" definition of the class Block, Port and Links """
 from typing import List
 from abc import ABC
 

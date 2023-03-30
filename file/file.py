@@ -24,9 +24,11 @@ class File(ABC):
         """ add a block to the class """
         self.blocks.append(block)
 
+
     def add_link(self, link:Link):
         """ add a link to the class """
         self.links.append(link)
+
 
     def get_blocks(self):
         """ return the blocks of the class """
