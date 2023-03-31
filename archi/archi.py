@@ -163,8 +163,6 @@ class ARCHIFile(File):
                 "diag_object_after_matlab", its conversion in matlab (of the object enrich) 
                 "before_object" the precedent object, without any changes 
         """
-    
-        list_of_to_file = []
         list_of_inputs = []
         list_of_outputs = []
         list_of_blocks = []

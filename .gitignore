@@ -6,7 +6,7 @@ my_file*.png
 archi_file*.archi
 diag_file_after_fusion.diag
 diag_file_after_fusion.png
-
+file_matlab.archi
 file_scade.archi
 *.asv
 .vscode
