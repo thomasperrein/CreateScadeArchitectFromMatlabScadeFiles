@@ -6,24 +6,22 @@ from archi import *
 from api_matlab import data_from_subsystem_matlab
 import diag.diag as diag
 
-import re
 
-
-
-def enrich_archi_with_matlab(path_simulink:str, filepath:str, subsystems:list, path_api:str, archi_object:archi.ARCHIFile):
-    """ main programm """
-    styleCSS_block = {
+styleCSS_block = {
         'shape' : 'box'
     }
-    styleCSS_port = {
+styleCSS_port = {
         'color' : 'white',
         'icon' : "'static/input_output.png'",
         'shape' : 'box'
     }
-    styleCSS_link = {
+styleCSS_link = {
         'color' : 'black',
         'dir' : 'forward'
     }
+
+def enrich_archi_with_matlab(path_simulink:str, filepath:str, subsystems:list, path_api:str, archi_object:archi.ARCHIFile):
+    """ main programm """
     
     list_of_blocks = []
     list_of_links = []
