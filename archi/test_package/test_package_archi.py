@@ -165,7 +165,26 @@ def test_fusion_link():
     for lien in archi_file.get_links():
         temp.append(f'{lien.output_port.name} -> {lien.input_port.name}')
     assert {'outport_block1 -> inport_block2','outport_block2 -> inport_block3','outport_block1 -> inport_block3'} == set(temp)
-    assert not({link,link2,link3} == {link in archi_file.get_links()})
+    assert not({link,link2,link3} == {link in archi_file.get_links()}) #fin test enrichissement à partir d'un fichier déjà créé
+
+    archi_file_2=archi.ARCHIFile('deux',[],[])
+    block1 = Block('block1',**styleCSS_block)
+    block2 = Block('block2',**styleCSS_block)
+    inport2 = InputPort(block2,'inport_block2',**styleCSS_port)
+    outport1 = OutputPort(block1,'outport_block1',**styleCSS_port2)
+    link = Link(outport1,inport2,**styleCSS_link)
+    archi_file_2.enrich_links([link])
+    temp = []
+    for lien in archi_file_2.get_links():
+        temp.append(f'{lien.output_port.name} -> {lien.input_port.name}')
+    assert {'outport_block1 -> inport_block2'} == set(temp)
+    archi_file_2.enrich_links([link])
+    temp = []
+    for lien in archi_file_2.get_links():
+        temp.append(f'{lien.output_port.name} -> {lien.input_port.name}')
+    assert ['outport_block1 -> inport_block2'] == temp #fin test enrichissement à partir d'un fichier vide
+
+
 
 
 if __name__ == '__main__':

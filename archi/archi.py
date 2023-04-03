@@ -89,17 +89,21 @@ class ARCHIFile(File):
 
 
     def enrich_links(self, new_links: List[Link]):
-        """ add new links if they haven't been already declared) """
+        """ add new links if they haven't been already declared """
         new_self_links = copy.deepcopy(self.links)
         link_to_add = []
         for link_new in new_links:
-            for link_file in new_self_links:
-                if (link_new.input_port.name == link_file.input_port.name) & (link_new.output_port.name == link_file.output_port.name):
-                    continue
-                else:
-                    attrib = {key: value for key, value in link_new.__dict__.items() if not key.startswith("__")} # We add it by retrieve his attribute
-                    link_to_add.append(Link(**attrib))
+            attrib = {key: value for key, value in link_new.__dict__.items() if not key.startswith("__")} # We add it by retrieve his attribute
+            if len(new_self_links) == 0:
+                link_to_add.append(Link(**attrib))
+            else:
+                for link_file in new_self_links:
+                    if (link_new.input_port.name == link_file.input_port.name) & (link_new.output_port.name == link_file.output_port.name):
+                        continue
+                    else:
+                        link_to_add.append(Link(**attrib))
         self.links = new_self_links + link_to_add
+        print('links added')
     
 
     def enrich_link_block(self, new_blocks: List[Block], new_links: List[Link]):
@@ -151,7 +155,8 @@ class ARCHIFile(File):
                 v = OutputPort(b, e['port_associated'] + '_' + data, **CSS_port)
                 link = Link(v,vv,'link',**CSS_link)
                 list_of_links.append(link)
-        self.enrich_link_block(list_of_blocks,list_of_links)
+        self.enrich_links(list_of_links)
+        self.enrich_blocks(list_of_blocks)
         diag_object_after_matlab = self.convert_to_diag()
         return(self, diag_object_after_matlab, before_object)
     
@@ -188,17 +193,17 @@ class ARCHIFile(File):
         
         links = {}
         i = 0
-        # for b in list_of_blocks:
-        #     ports_b = [re.sub(r'_P\d+$', "", port.name) for port in b.get_input_ports()]
-        #     for bb in list_of_blocks:
-        #         if b != bb:
-        #             ports_bb = [re.sub(r'_P\d+$', "", port.name) for port in bb.get_output_ports()]
-        #             set_common = set(ports_b) & set(ports_bb)
-        #             for e in set_common:
-        #                 i += 1
-        #                 links[f'link{i}']={'input': e + re.findall(r'_P\d+',b.name)[0],'output': e + re.findall(r'_P\d+',bb.name)[0]}
-        #                 b.add_usage()
-        #                 bb.add_usage()
+        for b in list_of_blocks:
+            ports_b = [re.sub(r'_P\d+$', "", port.name) for port in b.get_input_ports()]
+            for bb in list_of_blocks:
+                if b != bb:
+                    ports_bb = [re.sub(r'_P\d+$', "", port.name) for port in bb.get_output_ports()]
+                    set_common = set(ports_b) & set(ports_bb)
+                    for e in set_common:
+                        i += 1
+                        links[f'link{i}']={'input': e + re.findall(r'_P\d+',b.name)[0],'output': e + re.findall(r'_P\d+',bb.name)[0]}
+                        b.add_usage()
+                        bb.add_usage()
         
         # def delete_unlinked_block(list_of_blocks: list = list_of_blocks,list_of_to_file: list = list_of_to_file):
         #     for b in list_of_blocks:

@@ -29,8 +29,8 @@ def main():
     archi_empty = archi.ARCHIFile('',[],[])
     archi_afterscade,_,__ = archi_empty.enrich_archi_with_scade(PATH_SESSION_SCADE,styleCSS_block,styleCSS_port,styleCSS_link)
     assert archi_afterscade.filecmp(archi_empty)
-    archi_file, diag_file,__= archi_afterscade.enrich_archi_with_matlab(PATH_SIMULINK_MODEL, PATH_FILEPATH, SUBSYSTEM_LISTS, PATH_API_MATLAB,styleCSS_block,styleCSS_port,styleCSS_link)
-    archi_file.write_archi_file("archi_file_after_fusion.archi")
+    archi_file, diag_file,__= archi_empty.enrich_archi_with_matlab(PATH_SIMULINK_MODEL, PATH_FILEPATH, SUBSYSTEM_LISTS, PATH_API_MATLAB,styleCSS_block,styleCSS_port,styleCSS_link)
+    archi_empty.write_archi_file("archi_file_after_fusion.archi")
     diag_file.adapt_colors_w_clustering()
     diag_file.write_diag_file("diag_file_after_fusion.diag")
 
@@ -39,7 +39,7 @@ def scade():
     """ scade """
     archi_empty_2 = archi.ARCHIFile('',[],[])
     archi_afterscade, diag_afterscade,_ = archi_empty_2.enrich_archi_with_scade(PATH_SESSION_SCADE,styleCSS_block,styleCSS_port,styleCSS_link)
-    archi_afterscade.write_archi_file('file_scade.archi')
+    archi_empty_2.write_archi_file('file_scade.archi')
     diag_afterscade.adapt_colors_w_clustering()
     diag_afterscade.write_diag_file('my_file.diag')
 
@@ -48,7 +48,7 @@ def matlab():
     """ matlab """
     archi_empty_3 = archi.ARCHIFile('',[],[])
     archi_aftermatlab, diag_aftermatlab,_ = archi_empty_3.enrich_archi_with_matlab(PATH_SIMULINK_MODEL, PATH_FILEPATH, SUBSYSTEM_LISTS, PATH_API_MATLAB, styleCSS_block, styleCSS_port, styleCSS_link)
-    archi_aftermatlab.write_archi_file('file_matlab.archi')
+    archi_empty_3.write_archi_file('file_matlab.archi')
     diag_aftermatlab.adapt_colors_w_clustering()
     diag_aftermatlab.write_diag_file('my_file_2.diag')
 
