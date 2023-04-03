@@ -86,6 +86,7 @@ class ARCHIFile(File):
             else:
                 new_self_blocks.append(copy.copy(block))
         self.blocks = new_self_blocks
+        print('blocks added')
 
 
     def enrich_links(self, new_links: List[Link]):
@@ -102,6 +103,7 @@ class ARCHIFile(File):
                         continue
                     else:
                         link_to_add.append(Link(**attrib))
+                        break
         self.links = new_self_links + link_to_add
         print('links added')
     
@@ -155,8 +157,7 @@ class ARCHIFile(File):
                 v = OutputPort(b, e['port_associated'] + '_' + data, **CSS_port)
                 link = Link(v,vv,'link',**CSS_link)
                 list_of_links.append(link)
-        self.enrich_links(list_of_links)
-        self.enrich_blocks(list_of_blocks)
+        self.enrich_link_block(list_of_blocks, list_of_links)
         diag_object_after_matlab = self.convert_to_diag()
         return(self, diag_object_after_matlab, before_object)
     
