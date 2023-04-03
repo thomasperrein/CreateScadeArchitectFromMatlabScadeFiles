@@ -27,6 +27,7 @@ def data_from_several_subsystem_matlab(path_simulinkmodel:str, filename:str, sub
     eng.open_system(path_simulinkmodel,nargout = 0)
     eng.addpath(path_of_matlab_functions, nargout=0)
     for subsystem in subsystems:
+        # output1 = eng.get_list_of_block_connected_with_port_associated(filename+'/'+subsystem,subsystem)
         output1 = eng.get_list_of_block_connected_with_port_associated(filename,subsystem)
         output2 = eng.get_list_of_useless_port(filename,subsystem)
         output_list[subsystem] = (output1,output2)

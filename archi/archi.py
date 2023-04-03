@@ -164,32 +164,32 @@ class ARCHIFile(File):
         list_of_links = []
 
         scade_object = sc.ScadeFileSuite(PATH_SESSION_SCADE)
-        # data_scade = scade_object.data_of_interest()
         data_scade = scade_object.data_of_nodes()
 
         before_object = copy.deepcopy(self)
 
         for i in data_scade:
-            b = Block(i,**styleCSS_block)
+            name_of_block = i.replace('_bis','')
+            b = Block(name_of_block,**styleCSS_block)
             for input in data_scade[i]['inputs']:
-                v = InputPort(b,input + re.findall(r'_P\d+',i)[0],**styleCSS_port)
+                v = InputPort(b,input + '_' + name_of_block,**styleCSS_port)
                 list_of_inputs.append(v)
             for output in data_scade[i]['outputs']:
-                vv = OutputPort(b,output + re.findall(r'_P\d+',i)[0],**styleCSS_port)
+                vv = OutputPort(b,output + '_' + name_of_block,**styleCSS_port)
                 list_of_outputs.append(vv)
             list_of_blocks.append(b)
         
         links = {}
         i = 0
         for b in list_of_blocks:
-            ports_b = [re.sub(r'_P\d+$', "", port.name) for port in b.get_input_ports()]
+            ports_b = [re.sub('_' + b.name, "", port.name) for port in b.get_input_ports()]
             for bb in list_of_blocks:
                 if b != bb:
-                    ports_bb = [re.sub(r'_P\d+$', "", port.name) for port in bb.get_output_ports()]
+                    ports_bb = [re.sub('_' + bb.name, "", port.name) for port in bb.get_output_ports()]
                     set_common = set(ports_b) & set(ports_bb)
                     for e in set_common:
                         i += 1
-                        links[f'link{i}']={'input': e + re.findall(r'_P\d+',b.name)[0],'output': e + re.findall(r'_P\d+',bb.name)[0]}
+                        links[f'link{i}']={'input': e + '_' + b.name,'output': e + '_' + bb.name}
                         b.add_usage()
                         bb.add_usage()
         

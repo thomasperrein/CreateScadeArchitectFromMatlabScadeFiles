@@ -5,7 +5,7 @@ Main programm to test firstly
 from archi import *
 
 PATH_ARCHI_FILE = r'C:\TRAVAIL\GenerationModel\FindLinkBetweenNodesScade\test.archi'
-PATH_SESSION_SCADE = r"C:\TRAVAIL\BCM_WIP\V1\F46_LGS_SW_WL\10_BCM_SW\BCM_CSCIs\01_COM\BCM_COM\BCM_COM_Design\02-SCADE_Models\MASTER\MASTER.etp"
+PATH_SESSION_SCADE = r"C:\TRAVAIL\BCM_WIP\V2\BCM_Design_S0B_MEX4.5\10_BCM_SW\BCM_CSCIs\01_COM\BCM_COM\BCM_COM_Design\02-SCADE_Models\MASTER\MASTER.etp"
 styleCSS_block = {
         'color': 'orange',
         'shape' : 'box'
