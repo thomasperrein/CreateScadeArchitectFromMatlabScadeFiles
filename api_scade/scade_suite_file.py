@@ -4,6 +4,7 @@ Object Scade Suite file and its content
 
 import api_scade.path_gestion
 import scade.model.suite, scade.model.project
+import scade_env
 import typing
 
 from abc import ABC
@@ -11,12 +12,15 @@ import re
 
 class ScadeFile(ABC):
     """ Scade file """
-    def __init__(self, session: scade.model.suite.Session) -> None:
+    def __init__(self, path:str) -> None:
+        scade_env.load_project(path)
+        session = scade.model.suite.get_roots()[0]
         self.session = session
         self.path = session.descriptor.model_file_name
         self.model = session.model
         self.id = session._id_
         self.descriptor = session.descriptor
+        
 
     def close(self):
         self.session.unload()
@@ -28,8 +32,8 @@ class ScadeFile(ABC):
 
 class ScadeFileSuite(ScadeFile):
     """ Specific suite file """
-    def __init__(self, session) -> None:
-        super().__init__(session)
+    def __init__(self, path) -> None:
+        super().__init__(path)
         self.scade_file_type = 'suite'
     
 

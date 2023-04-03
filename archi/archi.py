@@ -5,17 +5,6 @@ from file.file import File
 from diag.diag import DIAGFile
 from api_matlab import data_from_subsystem_matlab
 import copy
-import sys
-import os 
-
-sys.path.append("C:\\Program Files\\ANSYS Inc\\v202\\SCADE\\SCADE\\APIs\\Python\\lib")
-sys.path.append("C:\\Program Files\\ANSYS Inc\\v202\\SCADE\\SCADE\\bin")
-sys.path.append("C:\\Program Files\\ANSYS Inc\\v202\\SCADE\\contrib\\Python37")
-# sys.path.append("C:\\Users\\fx622208\\AppData\\Local\\Programs\\Python\\Python39\\DLLs")
-os.environ["PATH"] = os.environ["PATH"] + "C:\\Program Files\\ANSYS Inc\\v202\\SCADE\\contrib\\Python37;"
-
-import scade_env
-import scade.model.suite, scade.model.project
 import api_scade.scade_suite_file as sc
 import re
 
@@ -174,9 +163,7 @@ class ARCHIFile(File):
         list_of_blocks = []
         list_of_links = []
 
-        scade_env.load_project(PATH_SESSION_SCADE)
-        a = scade.model.suite.get_roots()[0]
-        scade_object = sc.ScadeFileSuite(a)
+        scade_object = sc.ScadeFileSuite(PATH_SESSION_SCADE)
         # data_scade = scade_object.data_of_interest()
         data_scade = scade_object.data_of_nodes()
 
