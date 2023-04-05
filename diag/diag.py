@@ -13,7 +13,7 @@ class DIAGFile(File):
         
     def write_diag_file(self, path:str) -> None:
         """ write the archi file corresponding to the object """
-        f = open(path,'w')
+        f = open(path,'w', encoding='utf-8')
         f.write('blockdiag admin {\n')
         for block in self.blocks:
             f.write(block.write_block_w_port())

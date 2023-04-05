@@ -16,7 +16,7 @@ class ARCHIFile(File):
         
     def write_archi_file(self, path:str) -> None:
         """ write the archi file corresponding to the object """
-        f = open(path, 'w')
+        f = open(path, 'w', encoding='utf-8')
         f.write('<archi>\n')
         f.write(self.write_block())
         f.write(self.write_link())
@@ -125,27 +125,78 @@ class ARCHIFile(File):
             correspondance_name_objet[data] = b
             list_of_blocks.append(b)
             for e in data_matlab[data][0]['from']:
-                if e['name'].split('/')[-1].replace('\n',"").replace(' ','_') not in correspondance_name_objet:
-                    name_of_new_block = e['name'].split('/')[-1].replace('\n',"").replace(' ','_')
+                if e['name'].split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_') not in correspondance_name_objet:
+                    name_of_new_block = e['name'].split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_')
                     new_block = Block(name_of_new_block,**CSS_block)
                     list_of_blocks.append(new_block)
                     correspondance_name_objet[name_of_new_block] = new_block
-                new_block = correspondance_name_objet[e['name'].split('/')[-1].replace('\n',"").replace(' ','_')]
-                vv = OutputPort(new_block, e['port_associated'] + '_' + e['name'].split('/')[-1].replace('\n',"").replace(' ','_'), **CSS_port)
+                new_block = correspondance_name_objet[e['name'].split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_')]
+                vv = OutputPort(new_block, e['port_associated'] + '_' + e['name'].split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_'), **CSS_port)
                 v = InputPort(b, e['port_associated'] + '_' + data, **CSS_port)
                 link = Link(vv,v,'link',**CSS_link)
                 list_of_links.append(link)
             for e in data_matlab[data][0]['go']:
-                if e['name'].split('/')[-1].replace('\n',"").replace(' ','_') not in correspondance_name_objet:
-                    name_of_new_block = e['name'].split('/')[-1].replace('\n',"").replace(' ','_')
+                if e['name'].split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_') not in correspondance_name_objet:
+                    name_of_new_block = e['name'].split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_')
                     new_block = Block(name_of_new_block,**CSS_block)
                     list_of_blocks.append(new_block)
                     correspondance_name_objet[name_of_new_block] = new_block
-                new_block = correspondance_name_objet[e['name'].split('/')[-1].replace('\n',"").replace(' ','_')]
-                vv = InputPort(new_block, e['port_associated'] + '_' + e['name'].split('/')[-1].replace('\n',"").replace(' ','_'), **CSS_port)
+                new_block = correspondance_name_objet[e['name'].split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_')]
+                vv = InputPort(new_block, e['port_associated'] + '_' + e['name'].split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_'), **CSS_port)
                 v = OutputPort(b, e['port_associated'] + '_' + data, **CSS_port)
                 link = Link(v,vv,'link',**CSS_link)
                 list_of_links.append(link)
+        self.enrich_link_block(list_of_blocks, list_of_links)
+        diag_object_after_matlab = self.convert_to_diag()
+        return(self, diag_object_after_matlab, before_object)
+    
+
+    def enrich_archi_with_matlab2(self, path_simulink:str, filepaths:list, path_api:str, CSS_block:dict, CSS_port:dict, CSS_link:dict):
+        """ enrich archi file with matlab block into subsystems 
+        Archi (and File by extension) is a MUTABLE object so wen you activate the function, it changes the object
+        Returns : object changed
+                "diag_object_after_matlab", its conversion in matlab (of the object enrich) 
+                "before_object" the precedent object, without any changes 
+        """
+    
+        list_of_blocks = []
+        list_of_links = []
+
+        correspondance_name_objet = {}
+
+        data_matlab = data_from_subsystem_matlab.data_from_several_subsystem_matlab_corrected(path_simulink,filepaths,path_api)
+        
+        before_object = copy.deepcopy(self)
+
+        for data in data_matlab:
+            b = Block(data.split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_'),**CSS_block)
+            correspondance_name_objet[data] = b
+            list_of_blocks.append(b)
+            for e in data_matlab[data]['from']:
+                for block in e['name']:
+                    if block.split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_') not in correspondance_name_objet:
+                        name_of_new_block = block.split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_')
+                        new_block = Block(name_of_new_block,**CSS_block)
+                        list_of_blocks.append(new_block)
+                        correspondance_name_objet[name_of_new_block] = new_block
+                    new_block = correspondance_name_objet[block.split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_')]
+                    vv = OutputPort(new_block, e['port_associated'].split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_') + '_' + block.split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_'), **CSS_port)
+                    v = InputPort(b, e['port_associated'].split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_') + '_' + data.split('/')[-1], **CSS_port)
+                    link = Link(vv,v,'link',**CSS_link)
+                    list_of_links.append(link)
+
+            for e in data_matlab[data]['go']:
+                for block in e['name']:
+                    if block.split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_') not in correspondance_name_objet:
+                        name_of_new_block = block.split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_')
+                        new_block = Block(name_of_new_block,**CSS_block)
+                        list_of_blocks.append(new_block)
+                        correspondance_name_objet[name_of_new_block] = new_block
+                    new_block = correspondance_name_objet[block.split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_')]
+                    vv = InputPort(new_block, e['port_associated'].split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_') + '_' + block.split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_'), **CSS_port)
+                    v = OutputPort(b, e['port_associated'].split('/')[-1].replace('\n',"").replace(' ','_').replace('->','_') + '_' + data.split('/')[-1], **CSS_port)
+                    link = Link(v,vv,'link',**CSS_link)
+                    list_of_links.append(link)
         self.enrich_link_block(list_of_blocks, list_of_links)
         diag_object_after_matlab = self.convert_to_diag()
         return(self, diag_object_after_matlab, before_object)
