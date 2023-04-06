@@ -3,6 +3,7 @@
 Main programm to test firstly
 """
 from archi import *
+from api_scade.scade_architect_file import *
 
 PATH_ARCHI_FILE = r'C:\TRAVAIL\GenerationModel\FindLinkBetweenNodesScade\test.archi'
 PATH_SESSION_SCADE = r"C:\TRAVAIL\BCM_WIP\V2\BCM_Design_S0B_MEX4.5\10_BCM_SW\BCM_CSCIs\01_COM\BCM_COM\BCM_COM_Design\02-SCADE_Models\MASTER\MASTER.etp"
@@ -67,8 +68,15 @@ def matlab2():
     diag_aftermatlab.write_diag_file('my_file_2.diag')
 
 
+def write_archi():
+    archi_file = parse_archi.parse_archi_file('file_matlab.archi')
+    csv_file = ScadeArchitectOSDCSV('a name', archi_file.blocks, archi_file.links)
+    csv_file.write_csv('csv_test.csv')
+
+
 if __name__ == "__main__":
-    main()
+    # main()
     # scade()
     # matlab()
-    matlab2()
+    # matlab2()
+    write_archi()
