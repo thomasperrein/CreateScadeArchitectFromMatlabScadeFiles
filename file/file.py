@@ -92,4 +92,8 @@ class File(ABC):
                 blocks = clustered_block[f'{i}']
                 for block in blocks:
                     block.change_color(self.COLOR_CLUSTERS[i])
-    
+
+
+        def write_csv(path:str):
+            f = open(path, 'w', encoding='utf-8')
+            f.close()
